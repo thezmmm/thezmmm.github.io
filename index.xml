@@ -7,50 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Thezmmm</copyright>
-    <lastBuildDate>Thu, 19 May 2022 16:52:32 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 May 2022 13:01:27 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First</title>
-      <link>https://thezmmm.github.io/about/first/</link>
-      <pubDate>Thu, 19 May 2022 16:52:32 +0800</pubDate>
+      <title>About</title>
+      <link>https://thezmmm.github.io/about/about/</link>
+      <pubDate>Fri, 20 May 2022 13:01:27 +0800</pubDate>
       
-      <guid>https://thezmmm.github.io/about/first/</guid>
-      <description>111</description>
+      <guid>https://thezmmm.github.io/about/about/</guid>
+      <description>Nothing now</description>
     </item>
     
     <item>
-      <title>home</title>
-      <link>https://thezmmm.github.io/first/</link>
-      <pubDate>Thu, 19 May 2022 16:52:32 +0800</pubDate>
+      <title>Test</title>
+      <link>https://thezmmm.github.io/post/test/</link>
+      <pubDate>Fri, 20 May 2022 13:01:27 +0800</pubDate>
       
-      <guid>https://thezmmm.github.io/first/</guid>
-      <description>111</description>
+      <guid>https://thezmmm.github.io/post/test/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>post1</title>
-      <link>https://thezmmm.github.io/post/first/</link>
-      <pubDate>Thu, 19 May 2022 16:52:32 +0800</pubDate>
+      <title>TestHome</title>
+      <link>https://thezmmm.github.io/post/testhome/</link>
+      <pubDate>Fri, 20 May 2022 13:01:27 +0800</pubDate>
       
-      <guid>https://thezmmm.github.io/post/first/</guid>
-      <description>111</description>
-    </item>
-    
-    <item>
-      <title>post2</title>
-      <link>https://thezmmm.github.io/post/second/</link>
-      <pubDate>Thu, 19 May 2022 16:52:32 +0800</pubDate>
-      
-      <guid>https://thezmmm.github.io/post/second/</guid>
-      <description>111</description>
-    </item>
-    
-    <item>
-      <title>post3</title>
-      <link>https://thezmmm.github.io/post/third/</link>
-      <pubDate>Thu, 19 May 2022 16:52:32 +0800</pubDate>
-      
-      <guid>https://thezmmm.github.io/post/third/</guid>
-      <description>111</description>
+      <guid>https://thezmmm.github.io/post/testhome/</guid>
+      <description>test home</description>
     </item>
     
   </channel>
