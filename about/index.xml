@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Thezmmm</title>
+    <link>https://thezmmm.github.io/about/</link>
+    <description>Recent content in Abouts on Thezmmm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Thezmmm</copyright>
+    <lastBuildDate>Thu, 19 May 2022 16:52:32 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First</title>
+      <link>https://thezmmm.github.io/about/first/</link>
+      <pubDate>Thu, 19 May 2022 16:52:32 +0800</pubDate>
+      
+      <guid>https://thezmmm.github.io/about/first/</guid>
+      <description>111</description>
+    </item>
+    
+  </channel>
+</rss>
