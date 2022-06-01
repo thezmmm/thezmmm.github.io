@@ -2,22 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thezmmm.github.io/post/matlab/</loc>
+    <lastmod>2022-06-01T13:01:27+08:00</lastmod>
+  </url><url>
+    <loc>https://thezmmm.github.io/post/</loc>
+    <lastmod>2022-06-01T13:01:27+08:00</lastmod>
+  </url><url>
+    <loc>https://thezmmm.github.io/</loc>
+    <lastmod>2022-06-01T13:01:27+08:00</lastmod>
+  </url><url>
     <loc>https://thezmmm.github.io/about/about/</loc>
     <lastmod>2022-05-20T13:01:27+08:00</lastmod>
   </url><url>
     <loc>https://thezmmm.github.io/about/</loc>
     <lastmod>2022-05-20T13:01:27+08:00</lastmod>
   </url><url>
-    <loc>https://thezmmm.github.io/post/</loc>
-    <lastmod>2022-05-20T13:01:27+08:00</lastmod>
-  </url><url>
     <loc>https://thezmmm.github.io/post/test/</loc>
     <lastmod>2022-05-20T13:01:27+08:00</lastmod>
   </url><url>
     <loc>https://thezmmm.github.io/post/testhome/</loc>
-    <lastmod>2022-05-20T13:01:27+08:00</lastmod>
-  </url><url>
-    <loc>https://thezmmm.github.io/</loc>
     <lastmod>2022-05-20T13:01:27+08:00</lastmod>
   </url><url>
     <loc>https://thezmmm.github.io/tags/</loc>
