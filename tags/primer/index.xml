@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Primer on Thezmmm</title>
+    <link>https://thezmmm.github.io/tags/primer/</link>
+    <description>Recent content in Primer on Thezmmm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Thezmmm</copyright>
+    <lastBuildDate>Wed, 01 Jun 2022 13:01:27 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/tags/primer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matlab</title>
+      <link>https://thezmmm.github.io/post/matlab/</link>
+      <pubDate>Wed, 01 Jun 2022 13:01:27 +0800</pubDate>
+      
+      <guid>https://thezmmm.github.io/post/matlab/</guid>
+      <description>Command Line Terminal help format 指定数字的格式
+who 显示当前有哪些变量
+whos 显示当前变量的详细信息
+clear 清除所有变量，后加变量名则清除单个变量
+; 句末加分号，不显示计算结果
+方向键 显示历史命令
+clc 清屏
+Matrix 矩阵的输入 Row vector:a = [1 2 3]Column vector:	b = [1;2;3] Array Indexing  A(row.column)  A([row1 row2],[column1 column2]) 得到交集   A(index)  A([index1 index2 index3]) A([index1 index2;index3 index4])    Replacing Entries delete row: A(row,:) = []
+Colon Operator A = begin:end =&amp;gt; A=[begin begin+1 .</description>
+    </item>
+    
+  </channel>
+</rss>
