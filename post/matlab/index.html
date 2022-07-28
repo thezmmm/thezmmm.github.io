@@ -6,8 +6,8 @@
 	<meta itemprop="name" content="Matlab">
 <meta itemprop="description" content="The record of Matlab&#39;s usage"><meta itemprop="datePublished" content="2022-06-01T13:01:27+08:00" />
 <meta itemprop="dateModified" content="2022-06-01T13:01:27+08:00" />
-<meta itemprop="wordCount" content="219">
-<meta itemprop="keywords" content="data science," /><meta property="og:title" content="Matlab" />
+<meta itemprop="wordCount" content="1807">
+<meta itemprop="keywords" content="data-science," /><meta property="og:title" content="Matlab" />
 <meta property="og:description" content="The record of Matlab&#39;s usage" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://thezmmm.github.io/post/matlab/" /><meta property="article:section" content="post" />
@@ -87,7 +87,15 @@
   <ul>
     <li><a href="#command-line-terminal">Command Line Terminal</a>
       <ul>
-        <li></li>
+        <li><a href="#help">help</a></li>
+        <li><a href="#format">format</a></li>
+        <li><a href="#who">who</a></li>
+        <li><a href="#whos">whos</a></li>
+        <li><a href="#clear">clear</a></li>
+        <li><a href="#heading">;</a></li>
+        <li><a href="#方向键">方向键</a></li>
+        <li><a href="#clc">clc</a></li>
+        <li><a href="#time">time</a></li>
       </ul>
     </li>
     <li><a href="#matrix">Matrix</a>
@@ -102,25 +110,86 @@
         <li><a href="#matrix-related-functions">Matrix Related Functions</a></li>
       </ul>
     </li>
+    <li><a href="#structured-programming">Structured programming</a>
+      <ul>
+        <li><a href="#if-elseif-else">if elseif else</a></li>
+        <li><a href="#switch">switch</a></li>
+        <li><a href="#while">while</a></li>
+        <li><a href="#for">for</a></li>
+        <li><a href="#break">break</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#function">Function</a>
+      <ul>
+        <li><a href="#example">example</a></li>
+        <li><a href="#function-default-variables">Function default variables</a></li>
+        <li><a href="#function-handles">Function handles</a></li>
+      </ul>
+    </li>
+    <li><a href="#variables">Variables</a>
+      <ul>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#cell">Cell</a></li>
+        <li><a href="#type-convertion">Type Convertion</a></li>
+      </ul>
+    </li>
+    <li><a href="#file-access">File Access</a>
+      <ul>
+        <li><a href="#save">save</a></li>
+        <li><a href="#load">load</a></li>
+        <li><a href="#low-level-file-io-functions">Low-level File I/O Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#plot">plot</a>
+      <ul>
+        <li><a href="#plot-1">plot()</a></li>
+        <li><a href="#figure-adjustment">figure adjustment</a></li>
+        <li><a href="#mutiple-plots">Mutiple plots</a></li>
+        <li><a href="#control-of-grid-box-and-axis">Control of Grid, Box and Axis</a></li>
+        <li><a href="#save-figures">Save figures</a></li>
+        <li><a href="#advanced-2d-plots">Advanced 2D plots</a></li>
+        <li><a href="#3d-plots">3D plots</a></li>
+      </ul>
+    </li>
+    <li><a href="#digital-image">Digital Image</a>
+      <ul>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#read-and-show-image">Read and Show Image</a></li>
+        <li><a href="#write-image">Write Image</a></li>
+        <li><a href="#image-processing">Image Processing</a></li>
+        <li><a href="#image-thresholding">Image thresholding</a></li>
+        <li><a href="#background-estimation">Background Estimation</a></li>
+        <li><a href="#connected-component-labeling--bwlabel">Connected-component labeling : bwlabel()</a></li>
+        <li><a href="#color-coding-objects--label2rgb">Color-coding Objects : label2rgb()</a></li>
+        <li><a href="#object-properties--regionprops">Object Properties : regionprops()</a></li>
+        <li><a href="#interactive-selection--bwselect">Interactive Selection : bwselect()</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 				<h2 id="command-line-terminal">Command Line Terminal</h2>
-<h4 id="help">help</h4>
-<h4 id="format">format</h4>
-<p>指定数字的格式</p>
-<h4 id="who">who</h4>
+<h3 id="help">help</h3>
+<h3 id="format">format</h3>
+<p><code>format dataType</code>指定数字的格式</p>
+<h3 id="who">who</h3>
 <p>显示当前有哪些变量</p>
-<h4 id="whos">whos</h4>
+<h3 id="whos">whos</h3>
 <p>显示当前变量的详细信息</p>
-<h4 id="clear">clear</h4>
+<h3 id="clear">clear</h3>
 <p>清除所有变量，后加变量名则清除单个变量</p>
-<h4 id="heading">;</h4>
+<h3 id="heading">;</h3>
 <p>句末加分号，不显示计算结果</p>
-<h4 id="方向键">方向键</h4>
+<h3 id="方向键">方向键</h3>
 <p>显示历史命令</p>
-<h4 id="clc">clc</h4>
+<h3 id="clc">clc</h3>
 <p>清屏</p>
-<h2 id="matrix">Matrix</h2>
+<h3 id="time">time</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>tic
+</span></span><span style="display:flex;"><span>command
+</span></span><span style="display:flex;"><span>toc
+</span></span><span style="display:flex;"><span><span style="color:#008000">% count the time of runing command</span>
+</span></span></code></pre></div><h2 id="matrix">Matrix</h2>
 <h3 id="矩阵的输入">矩阵的输入</h3>
 <pre><code>Row vector:
 	a = [1 2 3]
@@ -196,7 +265,718 @@ F = [A;B]
 <li>length(A): vector&rsquo;s length</li>
 <li>find(A == num): return num&rsquo;s index</li>
 </ol>
-<p>(to be continued&hellip;)</p>
+<h2 id="structured-programming">Structured programming</h2>
+<h3 id="if-elseif-else">if elseif else</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#00f">if</span> condition1
+</span></span><span style="display:flex;"><span>	statement1
+</span></span><span style="display:flex;"><span><span style="color:#00f">elseif</span> condition2
+</span></span><span style="display:flex;"><span>	statement2
+</span></span><span style="display:flex;"><span><span style="color:#00f">else</span>
+</span></span><span style="display:flex;"><span>	statement3
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span></code></pre></div><h3 id="switch">switch</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#00f">switch</span> expression
+</span></span><span style="display:flex;"><span><span style="color:#00f">case</span> value1
+</span></span><span style="display:flex;"><span>	statement1
+</span></span><span style="display:flex;"><span><span style="color:#00f">case</span> value2
+</span></span><span style="display:flex;"><span>	statement2
+</span></span><span style="display:flex;"><span><span style="color:#00f">otherwise</span>
+</span></span><span style="display:flex;"><span>	statement3
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span></code></pre></div><h3 id="while">while</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#00f">while</span> condition
+</span></span><span style="display:flex;"><span>	statement
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span></code></pre></div><h3 id="for">for</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#00f">for</span> variable = start : increment : end
+</span></span><span style="display:flex;"><span>	commands
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div><h3 id="break">break</h3>
+<p>terminates the execution of for or while loops</p>
+<h3 id="tips">Tips</h3>
+<ol>
+<li>At the beginning of the script, use command
+<ul>
+<li><strong>clear all</strong> to remove previous varibles</li>
+<li><strong>close all</strong> to close all figures</li>
+<li><strong>clc</strong> to clear history</li>
+</ul>
+</li>
+<li>Use semicolon <strong>;</strong> at the end of commands to inhibit unwanted output</li>
+<li>Use ellipsis <strong>&hellip;</strong> to make scripts more readable</li>
+<li><strong>Ctrl+C</strong> to terminate the running script</li>
+</ol>
+<h2 id="function">Function</h2>
+<h3 id="example">example</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% function name = file name </span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">function</span> y = freebody(x0, v0, t)
+</span></span><span style="display:flex;"><span>x = x0 + v0.*t + 1/2*9.8*t.*t;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#00f">function</span> [a F] = acc(v2, v1, t2, t1, m)
+</span></span><span style="display:flex;"><span>a = (v2 - v1)./(t2 - t1);
+</span></span><span style="display:flex;"><span>F = m.*a;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[Acc Force] = acc(20, 10, 5, 4, 1)
+</span></span></code></pre></div><h3 id="function-default-variables">Function default variables</h3>
+<ol>
+<li>
+<p>inputname</p>
+<p>Variable name of function input</p>
+</li>
+<li>
+<p>mfilename</p>
+<p>File name of currently running function</p>
+</li>
+<li>
+<p>nargin</p>
+<p>Number of function input arguments</p>
+</li>
+<li>
+<p>nargout</p>
+<p>Number of function out arguments</p>
+</li>
+<li>
+<p>varargin</p>
+<p>Variable length input argument list</p>
+</li>
+<li>
+<p>varargout</p>
+<p>Variable length out argument list</p>
+</li>
+</ol>
+<h3 id="function-handles">Function handles</h3>
+<p>A way to create anonymous function</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>f = @(x) exp(-2*x);
+</span></span><span style="display:flex;"><span>x = 0:0.1:2;
+</span></span><span style="display:flex;"><span><span style="color:#008000">% draw figure</span>
+</span></span><span style="display:flex;"><span>plot(x, f(x))
+</span></span></code></pre></div><h2 id="variables">Variables</h2>
+<ol>
+<li>
+<p>numeric</p>
+<ol>
+<li>int8, int16, int32, int64</li>
+<li>uint8, uint16, uint32, uint64</li>
+<li>single</li>
+<li>double</li>
+</ol>
+</li>
+<li>
+<p>char</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% char is represented in ASCII using a numeric code between 0 to 255</span>
+</span></span><span style="display:flex;"><span>a = <span style="color:#a31515">&#39;c&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% declare string variable</span>
+</span></span><span style="display:flex;"><span>str = <span style="color:#a31515">&#39;abcdeabc&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>str(3)
+</span></span><span style="display:flex;"><span><span style="color:#008000">% print &#39;c&#39; , 3 as index</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>str == <span style="color:#a31515">&#39;a&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% print 1 0 0 0 1 0 0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>str(str == <span style="color:#a31515">&#39;a&#39;</span>) = <span style="color:#a31515">&#39;Z&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% a -&gt; Z  print &#39;ZbcdZbc&#39;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>logical</p>
+</li>
+<li>
+<p>cell</p>
+</li>
+<li>
+<p>structure</p>
+</li>
+<li>
+<p>function handle</p>
+</li>
+</ol>
+<h3 id="structure">Structure</h3>
+<h4 id="declare">declare</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% 1</span>
+</span></span><span style="display:flex;"><span>student.id = <span style="color:#a31515">&#39;first&#39;</span>;
+</span></span><span style="display:flex;"><span>student.name = <span style="color:#a31515">&#39;first&#39;</span>;
+</span></span><span style="display:flex;"><span>student.number = 123456;
+</span></span><span style="display:flex;"><span>student.grade = [100, 75, 73;<span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>				95, 91, 85.5;<span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>				100, 98, 72];
+</span></span><span style="display:flex;"><span>student
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>student(2).id = <span style="color:#a31515">&#39;second&#39;</span>;
+</span></span><span style="display:flex;"><span>student(2).name = <span style="color:#a31515">&#39;second&#39;</span>;
+</span></span><span style="display:flex;"><span>student(2).number = 123456;
+</span></span><span style="display:flex;"><span>student(2).grade = [100, 75, 73;<span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>                   95, 91, 85.5;<span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>                   100, 98, 72];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% 2</span>
+</span></span><span style="display:flex;"><span>A = struct(<span style="color:#a31515">&#39;data&#39;</span>, [3 4 5;8 0 1],<span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a31515">&#39;nest&#39;</span>, struct(<span style="color:#a31515">&#39;x&#39;</span>, [1 2 3], <span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>						   <span style="color:#a31515">&#39;y&#39;</span>, [3 4 5]));
+</span></span><span style="display:flex;"><span><span style="color:#008000">% A.data = [3 4 5;8 0 1]</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% A.nest.x = [1 2 3]</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% A.nest.y = [3 4 5]</span>
+</span></span></code></pre></div><h4 id="structure-function">Structure Function</h4>
+<ol>
+<li>fieldnames(S) : get all the fildnames of S</li>
+<li>rmfield(S, &lsquo;id&rsquo;) : remove the field &lsquo;id&rsquo; of S</li>
+</ol>
+<h3 id="cell">Cell</h3>
+<h4 id="delare">delare</h4>
+<p>delared using <strong>{}</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% 1</span>
+</span></span><span style="display:flex;"><span>A(1,1) = {[1 2;3 4]};
+</span></span><span style="display:flex;"><span>A(1,2) = {<span style="color:#a31515">&#39;string&#39;</span>};
+</span></span><span style="display:flex;"><span>A(2,1) = {3+7i};
+</span></span><span style="display:flex;"><span>A(2,2) = {-pi:pi:pi};
+</span></span><span style="display:flex;"><span>A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% 2</span>
+</span></span><span style="display:flex;"><span>A{1,1} = [1 2;3 4];
+</span></span><span style="display:flex;"><span>A{1,2} = <span style="color:#a31515">&#39;string&#39;</span>;
+</span></span><span style="display:flex;"><span>A{2,1} = 3+7i;
+</span></span><span style="display:flex;"><span>A{2,2} = -pi:pi:pi;
+</span></span><span style="display:flex;"><span>A
+</span></span></code></pre></div><h4 id="accessing-cell-array">Accessing cell array</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>A(1,1)
+</span></span><span style="display:flex;"><span><span style="color:#008000">% return a cell data</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A{1,1}
+</span></span><span style="display:flex;"><span><span style="color:#008000">% return the content in the cell</span>
+</span></span></code></pre></div><h4 id="cell-array-function">Cell Array Function</h4>
+<ol>
+<li>cell(row,column) : create cell array</li>
+<li>cell2struct : convert cell array to structure</li>
+<li>mat2cell : convert array to cell array with <strong>different sized</strong> cells</li>
+<li>num2cell : convert array to cell array with <strong>consistently sized</strong> cells</li>
+<li>cat(dimension,A,B) : concat cell array in different dimensions</li>
+<li>reshape(A,row,column) : reshape cell array</li>
+</ol>
+<h3 id="type-convertion">Type Convertion</h3>
+<ol>
+<li>double()</li>
+<li>single()</li>
+<li>int8() int16() int32() int64()</li>
+<li>uint8() uint16() uint32() uint64()</li>
+</ol>
+<h2 id="file-access">File Access</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">File Content</th>
+<th style="text-align:center">Extension</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Import Function</th>
+<th style="text-align:center">Export Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">mat</td>
+<td style="text-align:center">saved matlab work space</td>
+<td style="text-align:center">load</td>
+<td style="text-align:center">save</td>
+</tr>
+<tr>
+<td style="text-align:center">Text</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">space delimited numbers</td>
+<td style="text-align:center">load</td>
+<td style="text-align:center">save</td>
+</tr>
+<tr>
+<td style="text-align:center">SpreadSheet</td>
+<td style="text-align:center">xls, xlsx</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">xlsread</td>
+<td style="text-align:center">xlswrite</td>
+</tr>
+</tbody>
+</table>
+<h3 id="save">save</h3>
+<ol>
+<li>
+<p>work space</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>save filename.mat
+</span></span><span style="display:flex;"><span><span style="color:#008000">% save workspace data in file</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>save filename.mat -ascii
+</span></span><span style="display:flex;"><span><span style="color:#008000">% save readable workspace data in file </span>
+</span></span></code></pre></div></li>
+<li>
+<p>xls</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>xlswrite(<span style="color:#a31515">&#39;filename.xlsx&#39;</span>, variable, sheet_page, location)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% example</span>
+</span></span><span style="display:flex;"><span>xlswrite(<span style="color:#a31515">&#39;filename.xlsx&#39;</span>, M, 1, <span style="color:#a31515">&#39;E2:E4&#39;</span>) <span style="color:#008000">% M is a matrix</span>
+</span></span><span style="display:flex;"><span>xlswrite(<span style="color:#a31515">&#39;filename.xlsx&#39;</span>, {<span style="color:#a31515">&#39;Mean&#39;</span>}, 1, <span style="color:#a31515">&#39;E1&#39;</span>)
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="load">load</h3>
+<ol>
+<li>
+<p>work space</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>load (<span style="color:#a31515">&#39;filename.mat&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>load (<span style="color:#a31515">&#39;filename.mat&#39;</span>, <span style="color:#a31515">&#39;-ascii&#39;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>xls</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>score = xlsread(<span style="color:#a31515">&#39;filename.xlsx&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>score = xlsread(<span style="color:#a31515">&#39;filename.xlsx&#39;</span>, <span style="color:#a31515">&#39;B2:D4&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[score header] = xlsread(<span style="color:#a31515">&#39;filename.xlsx&#39;</span>)
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="low-level-file-io-functions">Low-level File I/O Functions</h3>
+<ol>
+<li>fopen</li>
+<li>fclose</li>
+<li>fscanf</li>
+<li>fprintf</li>
+<li>feof</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% example</span>
+</span></span><span style="display:flex;"><span>x = 0:pi/10:pi;y = sin(x);
+</span></span><span style="display:flex;"><span>fid = fopen(<span style="color:#a31515">&#39;filename.txt&#39;</span>, <span style="color:#a31515">&#39;w&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#00f">for</span> i=1:11
+</span></span><span style="display:flex;"><span>	fprintf(fid, <span style="color:#a31515">&#39;%5.3f %8.4f\n&#39;</span>, x(i), y(i));
+</span></span><span style="display:flex;"><span><span style="color:#00f">end</span>
+</span></span><span style="display:flex;"><span>fclose(fid);
+</span></span></code></pre></div><h2 id="plot">plot</h2>
+<h3 id="plot-1">plot()</h3>
+<ol>
+<li>plot(x, y) : plot each vector pairs (x,y)</li>
+<li>plot(y) : plot each vector pairs (x,y) where x = [1 &hellip; n] ,n=length(y)</li>
+</ol>
+<h4 id="hold-onoff">hold on/off</h4>
+<p>use <code>hold on</code> to have both plots in one figure</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>hold on
+</span></span><span style="display:flex;"><span>plot(cos(0:pi/20:2*pi))
+</span></span><span style="display:flex;"><span>plot(sin(0:pi/20:2*pi))
+</span></span><span style="display:flex;"><span>hold off
+</span></span></code></pre></div><h4 id="plot-style">plot style</h4>
+<p><code>plot(x, y, 'str')</code></p>
+<p><a href="http://www.ece.northwestern.edu/local-apps/matlabhelp/techdoc/ref/linespec.html">LineSpec (MATLAB Functions) (northwestern.edu)</a></p>
+<ol>
+<li>Data markers
+<ul>
+<li>dot : .</li>
+<li>cross : X</li>
+<li>circle : O</li>
+<li>plus sign : +</li>
+</ul>
+</li>
+<li>Line types
+<ul>
+<li>solid line : -</li>
+<li>dashed line : &ndash;</li>
+<li>dash-dotted line : -.</li>
+<li>dotted line : :</li>
+</ul>
+</li>
+<li>Colors
+<ul>
+<li>black : k</li>
+<li>$\color{#0000FF}{蓝}$  : b</li>
+<li>cyan : c</li>
+<li>green : g</li>
+<li>magenta : m</li>
+<li>red : r</li>
+<li>white : w</li>
+<li>yellow : y</li>
+</ul>
+</li>
+</ol>
+<h4 id="legend">legend()</h4>
+<p>add legend to graph</p>
+<p><img src="https://img-blog.csdnimg.cn/2019111612140211.jpg" alt="2019111612140211.jpg (560×420) (csdnimg.cn)"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>plot(x,y,<span style="color:#a31515">&#39;bd-&#39;</span>, x,h,<span style="color:#a31515">&#39;gp:&#39;</span>)
+</span></span><span style="display:flex;"><span>legend(<span style="color:#a31515">&#39;L1&#39;</span>, <span style="color:#a31515">&#39;L2&#39;</span>)
+</span></span></code></pre></div><h4 id="title--label">title &amp; label</h4>
+<ol>
+<li>title()</li>
+<li>xlabel()</li>
+<li>ylabel()</li>
+<li>zlabel()</li>
+</ol>
+<h4 id="text--annotation">text &amp; annotation</h4>
+<p><img src="https://img-blog.csdnimg.cn/2019111612145162.jpg" alt="2019111612145162.jpg (560×420) (csdnimg.cn)"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>str = <span style="color:#a31515">&#39;$$ \int_{0}^{2} x^2\sin(x) dx $$&#39;</span>;
+</span></span><span style="display:flex;"><span>text(x, y, str, <span style="color:#a31515">&#39;Interpreter&#39;</span>, <span style="color:#a31515">&#39;latex&#39;</span>);
+</span></span><span style="display:flex;"><span>annotation(<span style="color:#a31515">&#39;arrow&#39;</span>, <span style="color:#a31515">&#39;X&#39;</span>, [0.32,0.5], <span style="color:#a31515">&#39;Y&#39;</span>, [0.6,0.4]);
+</span></span></code></pre></div><h3 id="figure-adjustment">figure adjustment</h3>
+<h4 id="identifying-the-handle-of-an-object">Identifying the handle of an object</h4>
+<ol>
+<li>h = plot(x,y);</li>
+<li>Utility functions
+<ol>
+<li>gca ： return the handle of the current <strong>axes</strong></li>
+<li>gcf ： return the handle of the current <strong>figure</strong></li>
+<li>allchild : Find all children of specified objects</li>
+<li>ancestor : Find ancestor of graphics object</li>
+<li>delete : delete an object</li>
+<li>findall : find all graphics objects</li>
+</ol>
+</li>
+</ol>
+<h4 id="fetching-or-mordifying-properties">Fetching or Mordifying properties</h4>
+<ol>
+<li>
+<p>fetch properties : <strong>get()</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>h = plot(x,y);
+</span></span><span style="display:flex;"><span><span style="color:#008000">% get line properties</span>
+</span></span><span style="display:flex;"><span>get(h);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% get axes properties</span>
+</span></span><span style="display:flex;"><span>get(gca)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% get figure properties</span>
+</span></span><span style="display:flex;"><span>get(gcf)
+</span></span></code></pre></div></li>
+<li>
+<p>modify properties : <strong>set()</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>set(handle, property, value)
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="properties">properties</h4>
+<ol>
+<li>Axes
+<ul>
+<li>FontSize</li>
+<li>XTick</li>
+<li>XTickLabel</li>
+<li>FontName</li>
+</ul>
+</li>
+<li>Line
+<ul>
+<li>LineStyle</li>
+<li>LineWidth</li>
+<li>Color</li>
+</ul>
+</li>
+<li>Figure
+<ul>
+<li>Position : [left, bottom, width, height]</li>
+</ul>
+</li>
+</ol>
+<h3 id="mutiple-plots">Mutiple plots</h3>
+<ol>
+<li>
+<p>serval plots in <strong>different figures</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>figure, plot(x, y1);
+</span></span><span style="display:flex;"><span>figure, plot(x, y2);
+</span></span></code></pre></div></li>
+<li>
+<p>serval plots in **a figure **</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% subplot(row, column, num)</span>
+</span></span><span style="display:flex;"><span>subplot(2,2,1); plot(x,y); axis normal
+</span></span><span style="display:flex;"><span>subplot(2,2,2); plot(x,y); axis square
+</span></span><span style="display:flex;"><span>subplot(2,2,3); plot(x,y); axis equal
+</span></span><span style="display:flex;"><span>subplot(2,2,4); plot(x,y); axis equal tight
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="control-of-grid-box-and-axis">Control of Grid, Box and Axis</h3>
+<ol>
+<li>grid on/off</li>
+<li>box on/off</li>
+<li>axis on/off</li>
+<li>axis normal</li>
+<li>axis square</li>
+<li>axis equal</li>
+<li>axis equal tight</li>
+</ol>
+<h3 id="save-figures">Save figures</h3>
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>saveas(gcf, <span style="color:#a31515">&#39;filename&#39;</span>, <span style="color:#a31515">&#39;formattype&#39;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>print</p>
+</li>
+</ol>
+<h4 id="option">Option</h4>
+<ul>
+<li>Bitmap
+<ul>
+<li>jpeg</li>
+<li>png</li>
+<li>tiff</li>
+<li>bmpmono</li>
+<li>bmp</li>
+</ul>
+</li>
+<li>Vector
+<ul>
+<li>pdf</li>
+<li>eps</li>
+<li>epsc</li>
+<li>meta</li>
+<li>svg</li>
+<li>ps</li>
+<li>psc</li>
+</ul>
+</li>
+</ul>
+<h3 id="advanced-2d-plots">Advanced 2D plots</h3>
+<h4 id="logarithm-plots">Logarithm Plots</h4>
+<p>Take the logarithm of the axis</p>
+<ol>
+<li>semilogx</li>
+<li>semilogy</li>
+<li>loglog</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191116162419770.jpg" alt="20191116162419770.jpg (560×420) (csdnimg.cn)"></p>
+<h4 id="plotyy">plotyy</h4>
+<p>two y axis</p>
+<p><img src="https://img-blog.csdnimg.cn/2019111616233152.jpg" alt="2019111616233152.jpg (560×420) (csdnimg.cn)"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[AX, H1, H2] = plotyy(x,y1,x,y2);
+</span></span><span style="display:flex;"><span>set(get(AX(1), <span style="color:#a31515">&#39;Ylabel&#39;</span>), <span style="color:#a31515">&#39;String&#39;</span>,<span style="color:#a31515">&#39;Left Y-axis&#39;</span>);
+</span></span><span style="display:flex;"><span>set(get(AX(2), <span style="color:#a31515">&#39;Ylabel&#39;</span>), <span style="color:#a31515">&#39;String&#39;</span>,<span style="color:#a31515">&#39;Right Y-axis&#39;</span>);
+</span></span><span style="display:flex;"><span>set(H1, <span style="color:#a31515">&#39;LineStyle&#39;</span>, <span style="color:#a31515">&#39;--&#39;</span>); set(H2, <span style="color:#a31515">&#39;LineStyle&#39;</span>, <span style="color:#a31515">&#39;:&#39;</span>);
+</span></span></code></pre></div><h4 id="graph">graph</h4>
+<ol>
+<li>
+<p>Histogram</p>
+<ol>
+<li>hist(y, bins)</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/2019111621020318.jpg" alt="2019111621020318.jpg (560×420) (csdnimg.cn)"></p>
+</li>
+<li>
+<p>bar chart</p>
+<ol>
+<li>bar(y) : create a bar chart of y</li>
+<li>bar3(y) : create a 3D bar chart of y</li>
+<li>bar(y, &lsquo;stacked&rsquo;) : create a stacked bar chart of y</li>
+<li>barh(y) : create a hrizontal bar chart of y</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191116210529183.jpg" alt="20191116210529183.jpg (749×211) (csdnimg.cn)"></p>
+</li>
+<li>
+<p>pie chart</p>
+<ol>
+<li>pie(a) : create a pie chart</li>
+<li>pie(a,[0,0,0,1]) : create a pie chart and &lsquo;1&rsquo; is a separated section</li>
+<li>pie3(a) : create a 3d pie chart</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191116212427140.jpg" alt="20191116212427140.jpg (760×231) (csdnimg.cn)"></p>
+</li>
+<li>
+<p>polar chart</p>
+<ol>
+<li>polar(theta, r)</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/2019111616225430.jpg" alt="2019111616225430.jpg (1067×266) (csdnimg.cn)"></p>
+</li>
+<li>
+<p>stairs and stem chart</p>
+<ol>
+<li>staris(y)</li>
+<li>stem(y)</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191116213416886.jpg" alt="20191116213416886.jpg (758×313) (csdnimg.cn)"></p>
+</li>
+<li>
+<p>boxplot</p>
+<ol>
+<li>boxplot(MPG, Origin)</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191116213938244.jpg" alt="20191116213938244.jpg (560×420) (csdnimg.cn)"></p>
+</li>
+<li>
+<p>error bar</p>
+<ol>
+<li>errorbar(x,y,e)</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/20191116214616238.jpg" alt="20191116214616238.jpg (560×420) (csdnimg.cn)"></p>
+</li>
+</ol>
+<h4 id="color">color</h4>
+<h5 id="fill">fill</h5>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>t = (1:2:15)*pi/8; x = sin(t); y = cos(t)
+</span></span><span style="display:flex;"><span>fill(x,y,<span style="color:#a31515">&#39;r&#39;</span>); axis square off;
+</span></span><span style="display:flex;"><span>text(0,0,<span style="color:#a31515">&#39;STOP&#39;</span>,<span style="color:#a31515">&#39;Color&#39;</span>,<span style="color:#a31515">&#39;w&#39;</span>,<span style="color:#a31515">&#39;FontSize&#39;</span>,80 <span style="color:#008000">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a31515">&#39;FontWeight&#39;</span>,<span style="color:#a31515">&#39;bold&#39;</span>,<span style="color:#a31515">&#39;HorizontalAlignment&#39;</span>,<span style="color:#a31515">&#39;center&#39;</span>);
+</span></span></code></pre></div><h5 id="color-space">color space</h5>
+<p>[R G B]</p>
+<h5 id="color-bar">color bar</h5>
+<p><code>colorbar;</code></p>
+<p>Display the color of the gradation</p>
+<h5 id="imagesc">imagesc</h5>
+<p>Convert the element values in matrix A to different colors by size : <code>imagesc(A)</code></p>
+<h5 id="clormap">clormap</h5>
+<p>set the current colormap <code>colormap([name])</code></p>
+<p><img src="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/e586a587-4a80-11e4-9553-005056977bd0/27bfcffc-efd2-41b8-9bd6-9515d75f9afc/images/screenshot.jpg" alt=""></p>
+<h3 id="3d-plots">3D plots</h3>
+<h4 id="plot3">plot3</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>plot3(x,y1,z1,<span style="color:#a31515">&#39;r&#39;</span>,x,y2,z2,<span style="color:#a31515">&#39;b&#39;</span>);
+</span></span></code></pre></div><h4 id="meshgrid">meshgrid</h4>
+<p>create <strong>two matrices</strong> that satisfy the following conditions</p>
+<pre><code>- the same for each row of x
+- the same for each column of y
+- The length of vector x is the number of **columns** of the new matrix
+- The length of vector y is the number of **rows** of the new matrix
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[X,Y] = meshgrid(x,y);
+</span></span><span style="display:flex;"><span><span style="color:#008000">% x = [1 2 3]; y = [4 5]</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% X = [1 2 3;1 2 3] y = [4 4 4;5 5 5]</span>
+</span></span></code></pre></div><h4 id="surface-plots">Surface Plots</h4>
+<ol>
+<li>mesh()</li>
+<li>surf()</li>
+<li>mesh<strong>c</strong>() : add contour at the bottom</li>
+<li>surf<strong>c</strong>()</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>x = -3.5:0.2:3.5; y = -3.5:0.2:3.5;
+</span></span><span style="display:flex;"><span>[X,Y] = meshgrid(x,y);
+</span></span><span style="display:flex;"><span>Z = X.*exp(-X.^2-Y.^2)；
+</span></span><span style="display:flex;"><span>subplot(1,2,1); mesh(X,Y,Z);
+</span></span><span style="display:flex;"><span>subplot(1,2,2); surf(X,Y,Z);
+</span></span></code></pre></div><p><img src="https://img-blog.csdnimg.cn/20191116223947784.png" alt="20191116223947784.png (554×230) (csdnimg.cn)"></p>
+<h4 id="contour">contour</h4>
+<p>Draw contour lines of 3D graphics</p>
+<ol>
+<li>contour()</li>
+<li>Clabel() : Add elevation labels to contour plots</li>
+<li>contourf() : fill color</li>
+</ol>
+<h4 id="view">view</h4>
+<p>vary the view angle</p>
+<p><code>view(Azimuth, Elevation)</code></p>
+<h4 id="light">light</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% example</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% provide a light</span>
+</span></span><span style="display:flex;"><span>L1 = light(<span style="color:#a31515">&#39;Position&#39;</span>,[-1 -1 -1]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% set the light that have been provided</span>
+</span></span><span style="display:flex;"><span>set(L1, <span style="color:#a31515">&#39;Position&#39;</span>, [-1 -1 1]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">%set the color of light</span>
+</span></span><span style="display:flex;"><span>set(L1, <span style="color:#a31515">&#39;Color&#39;</span>, <span style="color:#a31515">&#39;g&#39;</span>);
+</span></span></code></pre></div><h2 id="digital-image">Digital Image</h2>
+<h3 id="type">Type</h3>
+<ol>
+<li>Binary Image : 0 is balck and 1 is white</li>
+<li>Greyscale Image : one channel , 0 to 255, black to white</li>
+<li>Color Image : three channel , R G B</li>
+</ol>
+<h3 id="read-and-show-image">Read and Show Image</h3>
+<ul>
+<li>
+<p>Read an image : imread()</p>
+</li>
+<li>
+<p>Show an image : imshow()</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>I = imread(<span style="color:#a31515">&#39;file&#39;</span>); <span style="color:#008000">% I is an image matrix	</span>
+</span></span><span style="display:flex;"><span>imshow(I);
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="image-info">Image info</h4>
+<p><code>imageinfo(file)</code></p>
+<h3 id="write-image">Write Image</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>imwrite(I, <span style="color:#a31515">&#39;filename.png&#39;</span>)
+</span></span></code></pre></div><h3 id="image-processing">Image Processing</h3>
+<h4 id="image-arithmetic">Image Arithmetic</h4>
+<ol>
+<li>imadd</li>
+<li>imsubtract</li>
+<li>immultiply</li>
+<li>imdivide</li>
+<li>imcoplement</li>
+</ol>
+<h4 id="image-histogram">Image Histogram</h4>
+<ol>
+<li>
+<p>imhist</p>
+<p><code>imhist(I)</code> Display the grayscale histogram of image i</p>
+</li>
+<li>
+<p>histeq</p>
+<p><code>I1 = histeq(I)</code> histeq can produce an image with an average gray level distribution probability</p>
+</li>
+</ol>
+<h4 id="geometric-transformation">Geometric Transformation</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Transform</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Transfomation Matirx</th>
+<th style="text-align:center">command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Translation</td>
+<td style="text-align:center"><img src="https://img-blog.csdnimg.cn/2019111813242824.png" alt="2019111813242824.png (67×61) (csdnimg.cn)"></td>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/1110317/201705/1110317-20170511185113457-1101532350.png" alt="1110317-20170511185113457-1101532350.png (164×75) (cnblogs.com)"></td>
+<td style="text-align:center">imtranslate()</td>
+</tr>
+<tr>
+<td style="text-align:center">Scale</td>
+<td style="text-align:center"><img src="https://img-blog.csdnimg.cn/20191118132831770.png" alt="20191118132831770.png (58×61) (csdnimg.cn)"></td>
+<td style="text-align:center"><img src="https://images0.cnblogs.com/blog/439761/201410/231022082304239.gif" alt="231022082304239.gif (346×78) (cnblogs.com)"></td>
+<td style="text-align:center">imresize()</td>
+</tr>
+<tr>
+<td style="text-align:center">Shear</td>
+<td style="text-align:center"><img src="https://img-blog.csdnimg.cn/20191118133317854.png" alt="20191118133317854.png (77×53) (csdnimg.cn)"></td>
+<td style="text-align:center"><!-- raw HTML omitted --></td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Rotation</td>
+<td style="text-align:center"><img src="https://img-blog.csdnimg.cn/20191118134626274.png" alt="20191118134626274.png (63×64) (csdnimg.cn)"></td>
+<td style="text-align:center"><img src="https://images0.cnblogs.com/blog/439761/201410/231022174333160.png" alt="231022174333160.png (578×126) (cnblogs.com)"></td>
+<td style="text-align:center">imrotate()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="image-thresholding">Image thresholding</h3>
+<p>if pixel &lt; threshold ,</p>
+<p>pixel = black,</p>
+<p>else pixel = white</p>
+<ol>
+<li>
+<p>graythresh() : computes an optimal <strong>threshold</strong></p>
+</li>
+<li>
+<p>im2bw() : converts an images into <strong>binary</strong> images</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>I = imread(<span style="color:#a31515">&#39;file.png&#39;</span>);
+</span></span><span style="display:flex;"><span>level = graythresh(I);
+</span></span><span style="display:flex;"><span>bw = im2bw(I,level);
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="background-estimation">Background Estimation</h3>
+<p>Estimation for the gray level of the background</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>BG = imopen(I,strel(<span style="color:#a31515">&#39;disk&#39;</span>,15));
+</span></span><span style="display:flex;"><span>imshow(BG);
+</span></span></code></pre></div><h4 id="background-subtraction">Background subtraction</h4>
+<p>If thresholding the inital image, some item will be subtracted and some background will be remained as dot</p>
+<p>So, subtract background to optimize the image thresholding</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>I2 = imsubtract(I,BG);
+</span></span></code></pre></div><h3 id="connected-component-labeling--bwlabel">Connected-component labeling : bwlabel()</h3>
+<p><img src="https://sciencetipsblog.files.wordpress.com/2017/06/ccl1.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[labeled, numObjects] = bwlabel(BW);
+</span></span><span style="display:flex;"><span>[labeled, numObjects] = bwlabel(BW,n);
+</span></span><span style="display:flex;"><span><span style="color:#008000">% n is the Connected search area, default: 8</span>
+</span></span></code></pre></div><h3 id="color-coding-objects--label2rgb">Color-coding Objects : label2rgb()</h3>
+<p>Convert a label matrix into an RGB color image</p>
+<p>Visualize the labeled regions</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>RGB_label = label2rgb(labeled);
+</span></span><span style="display:flex;"><span>imshow(RGB_label);
+</span></span></code></pre></div><h3 id="object-properties--regionprops">Object Properties : regionprops()</h3>
+<p>Provides a set of properties for each connected component</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>data = regionprops(labeled,<span style="color:#a31515">&#39;basic&#39;</span>);
+</span></span></code></pre></div><h3 id="interactive-selection--bwselect">Interactive Selection : bwselect()</h3>
+<p>Select objects using the mouse</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>objI = bwselect(BW);
+</span></span><span style="display:flex;"><span>imshow(objI);
+</span></span></code></pre></div><p>(to be continued&hellip;)</p>
 
 			</div>
 
@@ -205,7 +985,7 @@ F = [A;B]
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/data-science">data science</a></li>
+							<li><a href="/tags/data-science">data-science</a></li>
 							
 						</ul>
 					
