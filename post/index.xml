@@ -22,6 +22,30 @@
     </item>
     
     <item>
+      <title>JavaString</title>
+      <link>https://thezmmm.github.io/post/javastring/</link>
+      <pubDate>Sat, 16 Jul 2022 14:50:56 +0800</pubDate>
+      
+      <guid>https://thezmmm.github.io/post/javastring/</guid>
+      <description>查找   char charAt(int index)
+返回指定索引处的 char 值
+  boolean contains(CharSequence chars)
+判断字符串中是否包含指定的字符或字符串
+  int indexOf(int ch )
+int indexOf(int ch, int fromIndex)
+int indexOf(String str)
+int indexOf(String str, int fromIndex)
+  ch ：字符，Unicode 编码。
+  fromIndex ：开始搜索的索引位置，第一个字符是 0 ，第二个是 1 ，以此类推。
+  str ：要搜索的子字符串
+  返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1
+  int lastIndexOf(int ch)
+int lastIndexOf(int ch, int fromIndex)
+int lastIndexOf(String str)
+int lastIndexOf(String str, int fromIndex)</description>
+    </item>
+    
+    <item>
       <title>Matlab</title>
       <link>https://thezmmm.github.io/post/matlab/</link>
       <pubDate>Wed, 01 Jun 2022 13:01:27 +0800</pubDate>
@@ -35,15 +59,6 @@ clear 清除所有变量，后加变量名则清除单个变量
 方向键 显示历史命令
 clc 清屏
 time tic command toc % count the time of runing command Matrix 矩阵的输入 Row vector:a = [1 2 3]Column vector:	b = [1;2;3] Array Indexing  A(row.column)  A([row1 row2],[column1 column2]) 得到交集   A(index)  A([index1 index2 index3]) A([index1 index2;index3 index4])    Replacing Entries delete row: A(row,:) = []</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://thezmmm.github.io/post/test/</link>
-      <pubDate>Fri, 20 May 2022 13:01:27 +0800</pubDate>
-      
-      <guid>https://thezmmm.github.io/post/test/</guid>
-      <description></description>
     </item>
     
     <item>
