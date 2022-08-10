@@ -6,7 +6,7 @@
 	<meta itemprop="name" content="JavaString">
 <meta itemprop="description" content="Record some ways to use Java String smoothly"><meta itemprop="datePublished" content="2022-07-16T14:50:56+08:00" />
 <meta itemprop="dateModified" content="2022-07-16T14:50:56+08:00" />
-<meta itemprop="wordCount" content="246">
+<meta itemprop="wordCount" content="362">
 <meta itemprop="keywords" content="Java,String," /><meta property="og:title" content="JavaString" />
 <meta property="og:description" content="Record some ways to use Java String smoothly" />
 <meta property="og:type" content="article" />
@@ -91,6 +91,11 @@
     <li><a href="#拆分">拆分</a></li>
     <li><a href="#比较">比较</a></li>
     <li><a href="#操作">操作</a></li>
+    <li><a href="#stringbuffer-和-stringbuilder">StringBuffer 和 StringBuilder</a>
+      <ul>
+        <li><a href="#方法">方法</a></li>
+      </ul>
+    </li>
     <li><a href="#类型转换">类型转换</a></li>
   </ul>
 </nav>
@@ -232,6 +237,85 @@ public String <strong>substring</strong>(int beginIndex, int endIndex)</p>
 <li>
 <p>String <strong>trim</strong>()</p>
 <p>删除字符串的头尾空白符</p>
+</li>
+</ol>
+<h2 id="stringbuffer-和-stringbuilder">StringBuffer 和 StringBuilder</h2>
+<p>当<strong>对字符串进行修改</strong>的时候，需要使用 StringBuffer 和 StringBuilder 类</p>
+<p>和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且<strong>不产生新的未使用对象</strong>。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2013/12/java-string-20201208.png" alt="java-string-20201208.png (822×452) (runoob.com)"></p>
+<p>由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。</p>
+<h3 id="方法">方法</h3>
+<ol>
+<li>
+<p>StringBuffer append(String s)
+将指定的字符串追加到此字符序列。</p>
+</li>
+<li>
+<p>StringBuffer reverse()
+将此字符序列用其反转形式取代。</p>
+</li>
+<li>
+<p>delete(int start, int end)
+移除此序列的子字符串中的字符。</p>
+</li>
+<li>
+<p>insert(int offset, int i)
+将 <code>int</code> 参数的字符串表示形式插入此序列中。</p>
+</li>
+<li>
+<p>insert(int offset, String str)
+将 <code>str</code> 参数的字符串插入此序列中。</p>
+</li>
+<li>
+<p>replace(int start, int end, String str)
+使用给定 <code>String</code> 中的字符替换此序列的子字符串中的字符。</p>
+</li>
+<li>
+<p>char charAt(int index)
+返回此序列中指定索引处的 <code>char</code> 值。</p>
+</li>
+<li>
+<p>int indexOf(String str)
+返回第一次出现的指定子字符串在该字符串中的索引。</p>
+<ul>
+<li>int indexOf(String str, int fromIndex)
+从指定的索引处开始，返回第一次出现的指定子字符串在该字符串中的索引。</li>
+</ul>
+</li>
+<li>
+<p>int lastIndexOf(String str)
+返回最右边出现的指定子字符串在此字符串中的索引。</p>
+<ul>
+<li>int lastIndexOf(String str, int fromIndex)
+返回 String 对象中子字符串最后出现的位置。</li>
+</ul>
+</li>
+<li>
+<p>int length()</p>
+</li>
+</ol>
+<pre><code>返回长度（字符数）。
+</code></pre>
+<ol start="11">
+<li>
+<p>void setCharAt(int index, char ch)
+将给定索引处的字符设置为 <code>ch</code>。</p>
+</li>
+<li>
+<p>CharSequence subSequence(int start, int end)
+返回一个新的字符序列，该字符序列是此序列的子序列。</p>
+</li>
+<li>
+<p>String substring(int start)
+返回一个新的 <code>String</code>，它包含此字符序列当前所包含的字符子序列。</p>
+<ul>
+<li>String substring(int start, int end)
+返回一个新的 <code>String</code>，它包含此序列当前所包含的字符子序列。</li>
+</ul>
+</li>
+<li>
+<p>String toString()
+返回此序列中数据的字符串表示形式。</p>
 </li>
 </ol>
 <h2 id="类型转换">类型转换</h2>
