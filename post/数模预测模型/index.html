@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Mathematical Modeling of prediction - Thezmmm</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Mathematical Modeling of prediction">
+<meta itemprop="description" content="The note records what I have learned about Mathematical Modeling"><meta itemprop="datePublished" content="2022-08-05T20:07:37+08:00" />
+<meta itemprop="dateModified" content="2022-08-05T20:07:37+08:00" />
+<meta itemprop="wordCount" content="680">
+<meta itemprop="keywords" content="data-science," /><meta property="og:title" content="Mathematical Modeling of prediction" />
+<meta property="og:description" content="The note records what I have learned about Mathematical Modeling" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-05T20:07:37+08:00" />
+<meta property="article:modified_time" content="2022-08-05T20:07:37+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mathematical Modeling of prediction"/>
+<meta name="twitter:description" content="The note records what I have learned about Mathematical Modeling"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://thezmmm.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://thezmmm.github.io/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://thezmmm.github.io/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://thezmmm.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://thezmmm.github.io/">
+				<img src="https://avatars.githubusercontent.com/u/88533251" alt="Thezmmm" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://thezmmm.github.io/">Thezmmm</a></h1>
+	<div class="site-description"><p>Never do things by halves.</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/thezmmm" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li><li><a href="#" class="scheme-toggle" id="scheme-toggle"></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">05</span>
+							<span class="rest">Aug 2022</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Mathematical Modeling of prediction</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#灰色预测">灰色预测</a>
+      <ul>
+        <li><a href="#四种常见类型">四种常见类型</a></li>
+        <li><a href="#灰色关联度">灰色关联度</a></li>
+        <li><a href="#灰色生成数列">灰色生成数列</a></li>
+        <li><a href="#灰色模型-grey-model">灰色模型 Grey Model</a></li>
+        <li><a href="#gm11灰色预测的步骤">GM(1,1)灰色预测的步骤</a></li>
+      </ul>
+    </li>
+    <li><a href="#插值预测">插值预测</a>
+      <ul>
+        <li><a href="#高次插值的runge现象">高次插值的Runge现象</a></li>
+        <li><a href="#matlab命令">Matlab命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#拟合问题">拟合问题</a>
+      <ul>
+        <li><a href="#与插值的区别">与插值的区别</a></li>
+        <li><a href="#拟合的计算">拟合的计算</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+				<h2 id="灰色预测">灰色预测</h2>
+<ul>
+<li>灰色预测法是一种对含有不确定因素的系统进行预测的方法</li>
+<li>灰色预测对既含有已知信息又含有不确定信息的系统进行预测，就是对在一定范围内变化的，与时间有关的灰色过程进行预测</li>
+</ul>
+<h3 id="四种常见类型">四种常见类型</h3>
+<ol>
+<li>灰色时间序列预测
+即用观察到的反映预测对象特征的时间序 列来构造灰色预测模型, 预测末来某一时刻 的特征量, 或达到某一特征量的时间。</li>
+<li>畸变预测
+即通过灰色模型预测异常值出现的时刻, 预测异常值什么时候出现在特定时区内。</li>
+<li>系统预测
+通过对系统行为特征指标建立一组相互 关联的灰色预测模型, 预测系统中众多 变量间的相互协调关系的变化</li>
+<li>拓扑预测
+将原始数据做曲线, 在曲线上按定值寻 找该定值发生的所有时点, 并以该定值 为框架构成时点数列, 然后建立模型预 测该定值所发生的时点。</li>
+</ol>
+<h3 id="灰色关联度">灰色关联度</h3>
+<p>$$
+选取参考数列\</p>
+<p>X_{0}=\left{X_{0}(k) \mid k=1,2, \cdots, n\right}=\left(X_{0}(1), X_{0}(2), \cdots, X_{0}(n)\right)
+\
+其中  k  表示时刻\
+假设有  m  个比较数列\</p>
+<p>\begin{array}{l}
+X_{i}=\left{X_{i}(k) \mid k=1,2, \cdots, n\right}=\left(X_{i}(1), X_{i}(2), \cdots, X_{i}(n)\right) \
+\quad(i=1,2, \cdots, m)
+\end{array}
+\
+则称
+\
+\zeta_{i}(k)=\frac{\min <em>{i} \min <em>{k}\left|X</em>{0}(k)-X</em>{i}(k)\right|+\rho \max <em>{i} \max <em>{k}\left|X</em>{0}(k)-X</em>{i}(k)\right|}{\left|X_{0}(k)-X_{i}(k)\right|+\rho \max <em>{i} \max <em>{k}\left|X</em>{0}(k)-X</em>{i}(k)\right|} \quad\quad (1)\
+为比较数列  X_{i}  对参考数列  X_{0}  在  k  时刻的关联系数, 其中  \rho \in[0,+\infty)  为分辨系数。\一般来讲, 分辨系数  \rho \in[0,1] , 由 (1) 容易看出,  \rho  越大，分辩率越大;  \rho  越小，分辩率越小。\
+式 (1) 定义的关联系数是描述比较数列与参考数列在 某时刻关联程度的一种指标, 
+\由于各个时刻都有一个关联系 数, 因此信息显得过于分散, 不便于比较, 为此我们给出\</p>
+<p>r_{i}=\frac{1}{n} \sum_{k=1}^{n} \zeta_{i}(k) \quad\quad(2)
+\
+为比较数列  X_{i}  对参考数列  X_{0}  的关联度。\
+应该指出的是, 公式 (1) 中的  \left|X_{0}(k)-X_{i}(k)\right|  不能区别因素关联是正关联还是负关联\可采取下面办法 解决这个问题。记
+\
+\begin{aligned}
+\sigma_{i} &amp;=\sum_{k=1}^{n} k X_{i}(k)-\sum_{k=1}^{n} X_{i}(k) \sum_{k=1}^{n} \frac{k}{n} \
+\sigma_{n} &amp;=\sum_{k=1}^{n} k^{2}-\left(\sum_{k=1}^{n} k\right) 2 / n
+\end{aligned}</p>
+<p>\则当  \operatorname{sign}\left(\frac{\sigma_{i}}{\sigma_{n}}\right)=\operatorname{sign}\left(\frac{\sigma_{j}}{\sigma_{n}}\right) , 则  X_{i}  和  X_{j}  为正关联; \当  \operatorname{sign}\left(\frac{\sigma_{i}}{\sigma_{n}}\right)=-\operatorname{sign}\left(\frac{\sigma_{j}}{\sigma_{n}}\right) , 则  X_{i}  和  X_{j}  为负关联。
+$$</p>
+<p>参考数列的选取一般取最优情况</p>
+<h3 id="灰色生成数列">灰色生成数列</h3>
+<ol>
+<li>
+<p>累加生成
+$$
+把数列各项（时刻）数据依次累加的过程称为累加生成过程 由累加生成过程所得的数列称为
+累加生成数列。\设原始数列为  x^{(0)}=\left(x^{(0)}(1), x^{(0)}(2), \cdots ; x^{(0)}(n)\right) 
+\令</p>
+<p>\begin{array}{l}
+x^{(1)}(k)=\sum_{i=1}^{k} x^{(0)}(i), k=1,2, \cdots, n, \
+x^{(1)}=\left(x^{(1)}(1), x^{(1)}(2), \cdots, x^{(1)}(n)\right)
+\end{array}
+\
+称所得到的新数列为数列  x^{(0)}  的 1 次累加生成数列。\
+类似 地有
+x^{(r)}(k)=\sum_{i=1}^{k} x^{(r-1)}(i), k=1,2, \cdots, n, r \geq 1
+\
+称为  x^{(0)}  的  \mathbf{r}  次累加生成数列。
+$$</p>
+</li>
+</ol>
+<p>​	累加生成能使任意非负数列、摆动的与非摆动的，转化为<strong>非减</strong>的、<strong>递增</strong>的</p>
+<ol start="2">
+<li>
+<p>累减生成
+$$
+对于原始数据列依次做前后相邻的两个数据相减的 运算过程称为累减生成过程IAGO
+\如果原始数据列 为  x^{(1)}=\left(x^{(1)}(1), x^{(1)}(2), \cdots, x^{(1)}(n)\right) 
+\令  x^{(0)}(k)=x^{(1)}(k)-x^{(1)}(k-1), k=2,3, \cdots, n ,
+\称所得到的数列  x^{(0)}  为  x^{(1)}  的 1 次累减生成数列。
+\注: 从这里的记号也可以看到, 从原始数列  x^{(0)} , 得 到新数列  x^{(1)} , 再通过累减生成可以还原出原始数列。\ 实际运用中在数列  x^{(1)}  的基础上预测出  \hat{x}^{(1)} , 通过 累减生成得到预测数列  \hat{x}^{(0)}  。
+$$</p>
+</li>
+<li>
+<p>加权邻值生成
+$$
+设原始数列为  x^{(0)}=\left(x^{(0)}(1), x^{(0)}(2), \cdots, x^{(0)}(n)\right)  \称  x^{(0)}(k-1), x^{(0)}(k)  为数列  x^{(0)}  的任意一对邻值。  x^{(0)}(k-1)  为后邻值,  x^{(0)}(k)  为前邻值, \对于常
+数  \alpha \in[0,1] , 令  z^{(0)}(k)=\alpha x^{(0)}(k)+(1-\alpha) x^{(0)}(k-1), k=2,3, \cdots, n , \由此得到的数列  z^{(0)}  称为数列  x^{(0)}  在权  \alpha  下的邻值生 成数, 权  \alpha  也称为生成系数。
+\特别地, 当生成系数  \alpha=0.5  时, 则称</p>
+<p>\z^{(0)}(k)=0.5 x^{(0)}(k)+0.5 x^{(0)}(k-1), k=2,3, \cdots, n,</p>
+<p>\为均值生成数, 也称等权邻值生成数。
+$$</p>
+</li>
+</ol>
+<h3 id="灰色模型-grey-model">灰色模型 Grey Model</h3>
+<p>$$
+令设  x^{(0)}=\left(x^{(0)}(1), x^{(0)}(2), \cdots, x^{(0)}(n)\right)  为原始数列,\ 其  \mathbf{1}  次累 加生成数列为  x^{(1)}=\left(x^{(1)}(1), x^{(1)}(2), \cdots, x^{(1)}(n)\right) , 其中\</p>
+<p>x^{(1)}(k)=\sum_{i=1}^{k} x^{(0)}(i), k=1,2, \cdots, n,</p>
+<p>\* 定义  x^{(1)}  的灰导数为\</p>
+<p>d(k)=x^{(0)}(k)=x^{(1)}(k)-x^{(1)}(k-1) .</p>
+<p>\令  z^{(1)}  为数列  x^{(1)}  的邻值生成数列, 即</p>
+<p>\z^{(1)}(k)=\alpha x^{(1)}(k)+(1-\alpha) x^{(1)}(k-1),</p>
+<p>\于是定义  G M(1,1)  的灰微分方程模型为</p>
+<p>\d(k)+a z^{(1)}(k)=b</p>
+<p>\即或  x^{(0)}(k)+a z^{(1)}(k)=b ，(\mathbf{1}) 
+\在式（1）中,  x^{(0)}(k)  称为灰导数,  \mathbf{a}  称为发展系数,  z^{(1)}(k)  称为白化背景值,  \mathbf{b}  称为灰作用量。
+\将时刻表  k=2,3, \cdots, n  代入（1）式有
+\
+\left{\begin{array}{c}
+x^{(0)}(2)+a z^{(1)}(2)=b, \
+x^{(0)}(3)+a z^{(1)}(3)=b, \
+\cdots \cdots \cdots \cdots \
+x^{(0)}(n)+a z^{(1)}(n)=b,
+\end{array}\right.
+\
+引入矩阵向量记号：
+\
+u=\left[\begin{array}{l}
+a \
+b
+\end{array}\right] \quad Y=\left[\begin{array}{c}
+x^{(0)}(2) \
+x^{(0)}(3) \
+\vdots \
+x^{(0)}(n)
+\end{array}\right] \quad \mathbf{B}=\left[\begin{array}{cc}
+-z^{(1)}(2) &amp; 1 \
+-z^{(1)}(3) &amp; 1 \
+\vdots &amp; \vdots \
+-z^{(1)}(n) &amp; 1
+\end{array}\right]
+\于是  \mathbf{G M}(1,1 ）  模型可表示为  Y=\mathbf{B} u .
+\现在问题归结为求a,b在值。用一元线性回归, 即最小二乘法求它们的估计值 为
+\
+\hat{u}=\left[\begin{array}{l}
+\hat{a} \
+\hat{b}
+\end{array}\right]=\left(B^{T} B\right)^{-1} B^{T} Y .
+\GM（1，1）的白化型
+\对于  \mathbf{G M}(1,1)  的灰微分方程 (1) , 如果将灰导数  x^{(0)}(k)  的时刻  k=2,3, \cdots, n  视为连续变量  \mathrm{t} , \则  x^{(1)}  视为时间  \mathrm{t}  函数  x^{(1)}(t) , 于是  x^{(0)}(k)  对应于导数量级  \frac{d x{ }^{(1)}(t)}{d t} , 白化背景值  z^{(1)}(k)  对应于导数  x^{(1)}(t)  。\于是  \mathrm{GM}(1,1)  的灰微 分方程对应于的白微分方程为</p>
+<p>\ \frac{d x^{(1)}(t)}{d t}+a x^{(1)}(t)=b,
+$$</p>
+<h3 id="gm11灰色预测的步骤">GM(1,1)灰色预测的步骤</h3>
+<ol>
+<li>
+<p>数据的检验与处理
+$$
+为了保证GM  (1,1 ）  建模方法的可行性, 需要对已知数据做必要的检验 处理。\
+设原始数据列为了  x^{(0)}=\left(x^{(0)}(1), x^{(0)}(2), \cdots, x^{(0)}(n)\right) , 计算数列的级比\</p>
+<p>\lambda(k)=\frac{x^{(0)}(k-1)}{x^{(0)}(k)}, k=2,3, \cdots, n .
+\
+如果所有的级比都落在可容覆盖区间  X=\left(e^{\frac{-2}{n+1}}, e^{\frac{2}{n+1}}\right) 
+内,\ 则数据列  x^{(0)}  可以建立  \mathrm{GM}(1,1)  模型且可以进行灰色预测。 \否则对数据做适当的变换处理, 如平移变换:
+\取C使得数据列</p>
+<p>\y^{(0)}(k)=x^{(0)}(k)+c, k=1,2, \cdots, n,</p>
+<p>\的级比都落在可容覆盖内。
+$$</p>
+</li>
+<li>
+<p>建立GM(1,1)模型
+$$
+不妨设  x^{(0)}=\left(x^{(0)}(1), x^{(0)}(2), \cdots, x^{(0)}(n)\right)  满足上面的要
+求, \以它为数据列建立GM  (1,1)  模型
+\
+x^{(0)}(k)+a z^{(1)}(k)=b,
+\
+用回归分析求得  a, b  的估计值, 于是相应的白化模型为
+\
+\frac{d x^{(1)}(t)}{d t}+a x^{(1)}(t)=b,
+\
+解为
+\quad
+x^{(1)}(t)=\left(x^{(0)}(1)-\frac{b}{a}\right) e^{-a(t-1)}+\frac{b}{a} .
+\
+于是得到预测值
+\
+\hat{x}^{(1)}(k+1)=\left(x^{(0)}(1)-\frac{b}{a}\right) e^{-a k}+\frac{b}{a}, k=1,2, \cdots, n-1,
+\
+从而相应地得到预测值：
+\
+\hat{x}^{(0)}(k+1)=\hat{x}^{(1)}(k+1)-\hat{x}^{(1)}(k), k=1,2, \cdots, n-1,
+\
+$$</p>
+</li>
+<li>
+<p>检验预测值</p>
+<ol>
+<li>
+<p>残差检验：计算相对残差
+$$
+\varepsilon(k)=\frac{x^{(0)}(k)-\hat{x}^{(0)}(k)}{x^{(0)}(k)}, k=1,2, \cdots, n,</p>
+<p>\如果对所有的  |\varepsilon(k)|&lt;0.1 , 则认为达到较高的要求\否则, 若 对所有的  |\varepsilon(k)|&lt;0.2 , 则认为达到一般要求。
+$$</p>
+</li>
+<li>
+<p>级比偏差值检验
+$$
+\rho(k)=1-\frac{1-0.5 a}{1+0.5 a} \lambda(k),
+\
+如果对所有的  |\rho(k)|&lt;0.1 , 则认为达到较高的要求; 否则
+\若对所有的  |\rho(k)|&lt;0.2  ，则认为达到一般要求。
+$$</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="插值预测">插值预测</h2>
+<p>已知函数在某区间内的若干点的值，求函数在该区间内其他点处的值</p>
+<h3 id="高次插值的runge现象">高次插值的Runge现象</h3>
+<p>仅仅在插值多项式的次数不超过 7 时，插值多项式的次数越高，插值精度越高；插值多项式的次数超过 7 时，插值多项式会出现严重的振荡现象，称之为Runge现象，因此实际中<strong>不应使用 7 次以上的插值</strong></p>
+<h4 id="避免runge现象">避免Runge现象</h4>
+<p>将插值的区间分成若干小区间，在小区间内用低次插值，即分段低次插值</p>
+<h3 id="matlab命令">Matlab命令</h3>
+<ol>
+<li>
+<p>一维插值</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>yi = interp1(x,y,xi,<span style="color:#a31515">&#39;method&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% x,y为插值点</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% xi为待插值点 yi为插值结果</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% method表示插值方法</span>
+</span></span></code></pre></div></li>
+<li>
+<p>二位插值</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>zi = interp2(x,y,z,xi,yi,<span style="color:#a31515">&#39;method&#39;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>散乱点插值</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>griddata(x,y,z,xi,yi,<span style="color:#a31515">&#39;method&#39;</span>)
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="拟合问题">拟合问题</h2>
+<p>根据离散数据求数据间近似关系的问题称为曲线拟合问题</p>
+<h3 id="与插值的区别">与插值的区别</h3>
+<ol>
+<li>插值函数过已知点，拟合函数不一定过已知点</li>
+<li>插值主要用于求函数值，拟合主要求函数关系</li>
+</ol>
+<h3 id="拟合的计算">拟合的计算</h3>
+<ol>
+<li>
+<p>线型的选择</p>
+</li>
+<li>
+<p>线型中参数的计算</p>
+<ul>
+<li>线性：最小二乘法</li>
+<li>非线性：Gauss-Newton迭代法</li>
+</ul>
+</li>
+<li>
+<p>Matlab拟合</p>
+<ol>
+<li>
+<p>多项式拟合</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[a,S] = polyfit(x,y,n)
+</span></span><span style="display:flex;"><span><span style="color:#008000">% x,y是被拟合数据的自变量和因变量</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% n是拟合多项式的次数</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% a为拟合多项式系数构成的向量</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% S为分析拟合效果所需的指标</span>
+</span></span></code></pre></div></li>
+<li>
+<p>非线性拟合</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[b,r] = polyfit(x,y,fun,b0,option)
+</span></span><span style="display:flex;"><span><span style="color:#008000">% x,y是被拟合数据的自变量和因变量</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% fun为拟合函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% b0为拟合参数的初始迭代值</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% option为拟合选项</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% b为拟合参数</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% r为拟合残差</span>
+</span></span></code></pre></div></li>
+</ol>
+</li>
+</ol>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/data-science">data-science</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2022  © Thezmmm |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>

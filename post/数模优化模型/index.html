@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Mathematical Modeling of optimization - Thezmmm</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Mathematical Modeling of optimization">
+<meta itemprop="description" content="The note records what I have learned about Mathematical Modeling"><meta itemprop="datePublished" content="2022-08-06T20:07:37+08:00" />
+<meta itemprop="dateModified" content="2022-08-06T20:07:37+08:00" />
+<meta itemprop="wordCount" content="783">
+<meta itemprop="keywords" content="data-science," /><meta property="og:title" content="Mathematical Modeling of optimization" />
+<meta property="og:description" content="The note records what I have learned about Mathematical Modeling" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-06T20:07:37+08:00" />
+<meta property="article:modified_time" content="2022-08-06T20:07:37+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mathematical Modeling of optimization"/>
+<meta name="twitter:description" content="The note records what I have learned about Mathematical Modeling"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://thezmmm.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://thezmmm.github.io/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://thezmmm.github.io/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://thezmmm.github.io/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://thezmmm.github.io/">
+				<img src="https://avatars.githubusercontent.com/u/88533251" alt="Thezmmm" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://thezmmm.github.io/">Thezmmm</a></h1>
+	<div class="site-description"><p>Never do things by halves.</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/thezmmm" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li><li><a href="#" class="scheme-toggle" id="scheme-toggle"></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">06</span>
+							<span class="rest">Aug 2022</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Mathematical Modeling of optimization</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#规划模型">规划模型</a>
+      <ul>
+        <li><a href="#线性规划">线性规划</a></li>
+      </ul>
+    </li>
+    <li><a href="#整数规划">整数规划</a>
+      <ul>
+        <li><a href="#分类">分类</a></li>
+        <li><a href="#特点">特点</a></li>
+        <li><a href="#数学模型">数学模型</a></li>
+        <li><a href="#分枝定界法">分枝定界法</a></li>
+        <li><a href="#割平面法">割平面法</a></li>
+        <li><a href="#匈牙利算法">匈牙利算法</a></li>
+        <li><a href="#非线性规划">非线性规划</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+				<h2 id="规划模型">规划模型</h2>
+<h3 id="线性规划">线性规划</h3>
+<p><strong>目标函数</strong>及其<strong>约束条件</strong>均为线性函数，称为线性规划问题</p>
+<h4 id="线性规划的解">线性规划的解</h4>
+<p>可行解：满足约束条件的解</p>
+<p>最优解：达到最大值的可行解</p>
+<p>可行域：所有可行解构成的集合称为问题的可行域</p>
+<h4 id="matlab-求解">Matlab 求解</h4>
+<p>$$
+Matlab 中规定线性规划的标准形式为
+\newline
+\begin{array}{l}
+\min c^{T} x \
+\newline
+\text { s.t. }\left{\begin{array}{l}
+A x \leq b \
+A e q \cdot x=b e q \
+l b \leq x \leq u b
+\end{array}\right.
+\end{array}
+\newline
+其中  c, x, b, b e q, l b, u b  为列向量,  f  称为价值向量,  b  称为资 源向量,  A, A e q  为矩阵。
+$$</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#008000">% Matlab求解线性规划的命令为</span>
+</span></span><span style="display:flex;"><span>[x, fval] = linprog(c,A,b)
+</span></span><span style="display:flex;"><span>[x, fval] = linprog(c,A,b,Aeq,beq)
+</span></span><span style="display:flex;"><span>[x, fval] = linprog(c,A,b,Aeq,beq,lb,ub)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% x 返回的是决策向量的取值</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% fval 返回的是目标函数的最优值</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% c 为价值向量</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% A，b对应线性不等式约束</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% Aeq, beq对应线性等式约束</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% lb和ub对应的是决策向量的下界向量和上界向量</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% N.B. matlab只能求最小值，求最大值时取负号</span>
+</span></span></code></pre></div><h2 id="整数规划">整数规划</h2>
+<p>数学规划中的变量（部分或全部）限制为整数时，称为整数规划</p>
+<h3 id="分类">分类</h3>
+<ul>
+<li>纯整数规划：所有决策变量要求取非负整数，引进的松弛变量和剩余变量可以不要求取整数</li>
+<li>全整数规划：所有决策变量，系数，常数，引入的松弛变量和剩余变量都必须是整数</li>
+<li>混合整数规划：一部分决策变量要求取非负整数</li>
+<li>0-1整数规划：所有决策变量只能取0或1两个整数</li>
+</ul>
+<h3 id="特点">特点</h3>
+<ol>
+<li>原线性规划最优解全是整数，则整数规划与线性规划最优解一致</li>
+<li>整数规划<strong>可能没有可行解</strong></li>
+<li>有可行解，但<strong>最优解值变差</strong></li>
+<li>整数规划最优解不能按照线性规划最优解简单取整获得</li>
+</ol>
+<h3 id="数学模型">数学模型</h3>
+<p>$$
+\quad \max (\min ) \mathrm{z}=\sum_{j=1}^{\mathrm{n}} \mathrm{c}<em>{j} x</em>{j} 
+\newline
+\text { s.t. }\left{\begin{array}{l}
+\sum_{j=1}^{n} a_{i j} x_{j} \leq(=, \geq) b_{i} \quad(i=1,2, \ldots m) \
+x_{j} \geq 0, x_{j} \text { 为整数 }(j=1,2, \ldots n)
+\end{array}\right.
+$$</p>
+<h3 id="分枝定界法">分枝定界法</h3>
+<ol>
+<li>不考虑整数限制，先求出相应松弛问题(线性规划)的最优解</li>
+<li>若松弛问题无可行解，则ILP无可行解</li>
+<li>若求得的松弛问题的最优解符合整数要求，则是ILP的最优解</li>
+<li>若不满足整数条件，则任选一个不满足整数条件的变量 ，来构造新的约束(xi &lt;= INT(xi0) 或 xi &gt;= Ceil(xi0) )添加到松弛问题中形成两个子问题（xi0为松弛问题求出的xi的最优解）</li>
+<li>在依次缩小的可行域中求解新构造的线性规划的最优解，重复上述过程</li>
+</ol>
+<h3 id="割平面法">割平面法</h3>
+<h4 id="思想">思想</h4>
+<ol>
+<li>如果松弛问题无解，则整数规划无解</li>
+<li>如果松弛问题的最优解为整数向量，则也是整数规划的最优解</li>
+<li>如果松弛问题的解含有非整数分量，则对松弛问题增加割平面条件：即对松弛问题增加一个线性约束，将松弛问题的<strong>可行域割掉一块，使得非整数解恰好在割掉的一块中，但又没割掉整数规划的可行解</strong></li>
+</ol>
+<h4 id="步骤">步骤</h4>
+<ol>
+<li>
+<p>求解线性规划最优解</p>
+</li>
+<li>
+<p>$$
+\begin{array}{c}
+x_{i}+\sum a_{i k}x_{k}=b_{i}. 
+\
+将a_{i k} 和 b_{i}分为整数部分和小数部分\
+a_{i k}={\left[a_{i k}\right]+\left(a_{i k}-L a_{i k})=\left[a_{i k}\right]+f_{i k}\right.} \
+b_{i}=\left[b_{i}\right]+\left(b_{i}-L b_{i}\right)=\left[b_{i}\right]+f_{i}
+\end{array}
+$$</p>
+</li>
+<li>
+<p>$$
+x_{i}+\sum\left[a_{i k}\right] x_{k}+\sum f_{i k}x_{k}=\left[b_{i}\right]+f_{i}
+\
+x_{i}+\sum\left[a_{i k}\right] x_{k}-\left[b_{i}\right]=-\sum f_{i k} x_{k}+f_{i}\
+-\sum f_{i k} x_{k}+f_{i} \leq 0
+$$</p>
+</li>
+</ol>
+<p>小数 减去 一个正的小数，需要得到整数(左侧)，因此右侧小于等于0</p>
+<h3 id="匈牙利算法">匈牙利算法</h3>
+<p>求解0-1规划问题</p>
+<h4 id="互斥约束的推广">互斥约束的推广</h4>
+<p>$$
+从下述  p  个约束条件中恰好选择  q  个约束条件\
+\sum_{j=1}^{n} a_{i j} x_{j} \leq b_{i}(i=1,2, \cdots, p) \
+y_{i}=\left{\begin{array}{ll}0 &amp; \text { 选第 } i \text { 个约束条件 } \ 1 &amp; \text { 不选第 } i \text { 个约束条件 }\end{array}(i=1, \cdots, p)\right. 
+\
+\left{\begin{array}{l}
+\sum_{j=1}^{n} a_{i j} x_{j} \leq b_{i}+M y_{i} \
+\sum_{i=1}^{p} y_{i}=p-q
+\end{array}(i=1,2, \cdots, p)\right.
+$$</p>
+<h4 id="指派问题">指派问题</h4>
+<p>$$
+有  n  个人和  n  项工作, 已知第  i  个人做第  j  项工作的代价 为  c_{i j}(i, j=1, \ldots, n),\  要求每项工作只能交与其中一人完成, 每个 人只能完成其中一项工作, \问如何分配可使总代价最少?\
+C=\left(c_{i j}\right)<em>{n \times n}=\left(\begin{array}{cccc}c</em>{11} &amp; c_{12} &amp; \cdots &amp; c_{1 n} \ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2 n} \ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \ c_{n 1} &amp; c_{n 2} &amp; \cdots &amp; c_{n n}\end{array}\right)  指派问题的系数矩阵\  i  行元素——第  i  个人完成各项工作的代价  \j  列元素——各人完成第  j  项工作的代价\
+\begin{array}{l}
+x_{i j}=\left{\begin{array}{cc}
+1 &amp; \text { 第 } i \text { 个人做第 } j \text { 项工作 } \
+0 &amp; \text { 第 } i \text { 个人不做第 } j \text { 项工作 }
+\end{array}(i, j=1, \cdots, n)\right.\
+\quad \min z=\sum_{i=1}^{n} \sum_{j=1}^{n} c_{i j} x_{i j}\
+\begin{array}{l}
+X=\left(x_{i j}\right)<em>{n \times n}=\left(\begin{array}{cccc}
+x</em>{11} &amp; x_{12} &amp; \cdots &amp; x_{1 n} \
+x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2 n} \
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \
+x_{n 1} &amp; x_{n 2} &amp; \cdots &amp; x_{n n}
+\end{array}\right) \quad \text { s.t. }\left{\begin{array}{l}
+\sum_{j=1}^{n} x_{i j}=1(i=1, \cdots, n) \
+\sum_{i=1}^{n} x_{i j}=1(j=1, \cdots, n) \
+x_{i j}=0 \text { 或 } 1(i, j=1, \cdots, n)
+\end{array}\right. \
+\text { 指派问题的解矩阵 }
+\end{array}\
+\text { 指派回题可行解中，每歹每行有且仅有一个1 }
+\end{array}
+$$</p>
+<h4 id="非标准形式的指派问题">非标准形式的指派问题</h4>
+<ol>
+<li>
+<p>最大优化指派问题</p>
+<p>即求最大值问题</p>
+<p>令最大元素为 m ， 将系数矩阵的元素 x 换为 m - x</p>
+</li>
+<li>
+<p>人数和工作数不等</p>
+<p>人少工作多：添加虚拟的人，代价都为0</p>
+<p>人多工作少：添加虚拟的工作，代价都为0</p>
+</li>
+<li>
+<p>一个人可做多工作</p>
+<p>该人化为几个相同的人</p>
+</li>
+<li>
+<p>某工作一定不能由某人做</p>
+<p>将某人做某工作的代价取足够大 M</p>
+</li>
+</ol>
+<h4 id="匈牙利解法">匈牙利解法</h4>
+<ol>
+<li>
+<p>变换指派问题的系数矩阵 (cij) 为 (bij), 使在 (bij) 的各行各列都出现 0元素</p>
+<ol>
+<li>从 (cij) 的每行元素都减去该行的最小元素</li>
+<li>再从所得新系数矩阵的每列元素中减去该列最小的元素</li>
+</ol>
+</li>
+<li>
+<p>进行试指派，以寻求最优解</p>
+<ol>
+<li>从只有一个 0 元素的行(列)开始, 给这个 0 元素加圈, 记作 <!-- raw HTML omitted -->O<!-- raw HTML omitted -->。然后 划去 0 所在列(行)的其它 0 元素, 记作 <del>0</del> ; 这表示这列所代表的任务已指派 完, 不必再考虑别人了。</li>
+<li>给只有一个 0 元素的列(行)中的 0 元素加圈, 记作 <!-- raw HTML omitted -->O<!-- raw HTML omitted -->; 然后划去 <!-- raw HTML omitted -->O<!-- raw HTML omitted --> 所 在行的 0 元素, 记作 <del>0</del> .</li>
+<li>反复进行 (1), (2)两步, 直到尽可能多的 0 元素都被圈出和划掉为止。</li>
+<li>若仍有没有划圈的 0 元素，且同行(列)的 0 元素至少有两个， 则从剩有 0 元素最少的行(列)开始, 比较这行各 0 元素所在列中 0 元 素的数目, 选择 0 元素少的那列的这个 0 元素加圈(表示选择性多的 要“礼让” 选择性少的)。然后划掉同行同列的其它 0 元素。可反复进行, 直到所有 0 元素都已圈出和划掉为止。</li>
+<li>若<!-- raw HTML omitted -->O<!-- raw HTML omitted --> 元素的数目  m  等于矩阵的阶数  n , 那么这指派问题的 最优解已得到。若  m&lt;n , 则转入下一步。</li>
+</ol>
+</li>
+<li>
+<p>作最少的直线覆盖</p>
+<ol>
+<li>对没有<!-- raw HTML omitted -->O<!-- raw HTML omitted -->的行打√</li>
+<li>对已打√的行中所有含<del>0</del>的列打√</li>
+<li>再对打有√的列中含<!-- raw HTML omitted -->O<!-- raw HTML omitted -->的行打√</li>
+<li>重复(2), (3)直到得不出新的打√的行列为止</li>
+<li>(5)对没有打 √ 的行画横线, 有打 √ 的列画纵线, 这就得到覆盖 所有 0 元素的最少直线数  l  。  l  应等于  m , 若不相等, 说明试指派过程有误, 回到第二步(4), 另行试指派; 若  l=m&lt;n , 须再变换当前 的系数矩阵, 以找到  n  个独立的 0 元素, 为此转第四步。</li>
+</ol>
+</li>
+<li>
+<p>变换矩阵(bij)以增加0元素</p>
+<p>在没有被直线覆盖的所有元素中找出最小元素，然后打 √ 各行都减去这最小元素；打√各列都加上这最小元素(保证系数矩阵中不出现负元素)。新系数矩阵的最优解和原问题相同，转回第二步。</p>
+</li>
+</ol>
+<h3 id="非线性规划">非线性规划</h3>
+<p>如果目标函数或约束条件中包含非线性函数，就称这种规划问题为非线性规划问题
+$$
+\min \mathrm{f}(\mathrm{x}) \
+\text { s.t. }\left{\begin{array}{c}
+A \cdot x \leq b \
+A e q \cdot x=b e q \
+c (x)\leq0 \
+c e q(x)=0 \
+l b \leq x \leq u b
+\end{array}\right.
+\
+其中  f(x)  是标量函数,  \mathbf{A}, \mathbf{b}, \mathbf{A e q}, \mathbf{b e q}, \mathbf{l b}, \mathbf{u b}  是相应维数的 矩阵和向量,\  c(x), c e q(x)  是非线性向量函数。
+$$</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[x, fval] = fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">%  x 的返回值是决策向量 x 的取值, fval返回的是目标函数的取值</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% 其中 fun 是用 M 文件定义的目标函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% x0 是 x 的初始值</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% A,b,Aeq,beq定义了线性约束</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% lb和ub是变量x的下界和上界</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% nonlcon是用M文件定义的非线性向量函数c(x), ceq(x)</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% options定义了优化参数</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% 可以使用 Matlab缺省的参数设置。</span>
+</span></span></code></pre></div><h4 id="二次规划">二次规划</h4>
+<p>若某非线性规划目标函数为自变量的二次函数，约束条件又全是线性的，则为二次规划
+$$
+Matlab中二次规划的数学模型可表述如下\</p>
+<p>\begin{array}{l}
+\min \frac{1}{2} x^{T} H x+f^{T} x \
+\text { s.t. }\left{\begin{array}{c}
+A x \leq b \
+A e q \cdot x=b e q \
+l b \leq x \leq u b
+\end{array}\right.
+\end{array}\</p>
+<p>这里  \mathbf{H}  是实对称矩阵,  \mathbf{f}, \mathbf{b}, \mathbf{b e q}, \mathbf{l b}, \mathbf{u b}  是列向量, A, Aeq 是相应维数的矩阵
+$$</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>[x, fval] = quadprog(H,f,A,b,Aeq,beq,lb,ub,x0,options)
+</span></span></code></pre></div>
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/data-science">data-science</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2022  © Thezmmm |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>feather.replace()</script>
+</body>
+</html>
