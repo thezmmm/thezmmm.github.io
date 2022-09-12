@@ -7,19 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Thezmmm</copyright>
-    <lastBuildDate>Sat, 06 Aug 2022 20:07:37 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 10:30:53 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mathematical Modeling of optimization</title>
-      <link>https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Sat, 06 Aug 2022 20:07:37 +0800</pubDate>
+      <title>Queue</title>
+      <link>https://thezmmm.github.io/post/javaqueue/</link>
+      <pubDate>Mon, 12 Sep 2022 10:30:53 +0800</pubDate>
       
-      <guid>https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B/</guid>
-      <description>规划模型 线性规划 目标函数及其约束条件均为线性函数，称为线性规划问题
-线性规划的解 可行解：满足约束条件的解
-最优解：达到最大值的可行解
-可行域：所有可行解构成的集合称为问题的可行域
-Matlab 求解 $$ Matlab 中规定线性规划的标准形式为 \newline \begin{array}{l} \min c^{T} x \ \newline \text { s.t. }\left{\begin{array}{l} A x \leq b \ A e q \cdot x=b e q \ l b \leq x \leq u b \end{array}\right. \end{array} \newline 其中 c, x, b, b e q, l b, u b 为列向量, f 称为价值向量, b 称为资 源向量, A, A e q 为矩阵。 $$
-% Matlab求解线性规划的命令为 [x, fval] = linprog(c,A,b) [x, fval] = linprog(c,A,b,Aeq,beq) [x, fval] = linprog(c,A,b,Aeq,beq,lb,ub)  % x 返回的是决策向量的取值 % fval 返回的是目标函数的最优值 % c 为价值向量 % A，b对应线性不等式约束 % Aeq, beq对应线性等式约束 % lb和ub对应的是决策向量的下界向量和上界向量  % N.</description>
+      <guid>https://thezmmm.github.io/post/javaqueue/</guid>
+      <description>Queue 队列是一种FIFO( First In First Out)型的线性结构
+Queue的实现类有LinkedList和PriorityQueue。最常用的实现类是LinkedList
+Queue queue = new LinkedList();  // add() 和 remove() 在失败时会抛出异常  // 添加元素 queue.offer(1); // 删除元素 queue.poll(); // 查看队首元素 queue.peek(); // 获取队列长度 queue.size() Deque 普通队列可以从队尾添加元素，从队首删除元素，而**双端队列( double ended queue )**可以在两头进行添加和删除
+示例 Deque deque = new LinkedList();  // add() 和 remove() 在失败时会抛出异常  // 添加元素 deque.offerFirst(1); deque.offerLast(1); // 删除元素 deque.pollFirst(); deque.pollLast(); // 查看元素 deque.peekFirst(); deque.peekLast(); // 获取队列长度 deque.size() Deque的堆栈操作 Java堆栈的Stack已经过时，官方推荐使用Deque替代Stack使用
+Deque的堆栈操作方法：
+ push() : 等效于addFirst() pop() : 等效于removeFirst() peek() : 等效于peekFirst()  Priority queue PriorityQueue，即优先队列。优先级队列可以保证每次取出来的元素都是队列中的最小或最大的元素（Java优先级队列默认每次取出来的为最小元素）</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://thezmmm.github.io/post/sys-linux/</link>
+      <pubDate>Mon, 05 Sep 2022 10:30:53 +0800</pubDate>
+      
+      <guid>https://thezmmm.github.io/post/sys-linux/</guid>
+      <description>Linux 系统目录结构  /  /bin 存放最常使用的命令 /sbin s为super user，存放系统管理员使用的系统管理程序 /home 存放普通用户的主目录  /alice /bob /eve   /root 系统管理员的用户主目录 /lib 动态链接共享库 /lost+found 系统非法关机后存放一些文件，一般为空 /etc 配置文件和子目录 /user 应用程序和文件存放目录  /local 给主机额外安装软件所安装的目录   /boot 启动Linux使用的一些核心文件，包括一些链接文件及镜像文件 /proc 系统内存的映射 /srv service，服务启动之后需要提取的数据 /sys /tmp 存放临时文件 /dev 把所有**硬件(device)**用文件的形式存储 /media 把识别的设备(如U盘，光驱等)挂载到此目录下 /mnt 让用户临时挂载别的文件系统，可以将外部存储挂载在/mnt/上 /opt 给主机额外安装软件所摆放的目录 /var 存放不断被扩充的内容，包括各种日志文件 /selinux security-enhanced linux 安全子系统    系统重要文件 系统网卡配置文件 文件路径 系统网卡文件默认名称 /etc/sysconfig/network-scripts/ifcfg-ens33
+系统网卡文件常用名称 /etc/sysconfig/network-scripts/ifcfg-eth0
+文件介绍 这是Linux系统第一块网卡的配置文件所在路径，其中第一块网卡配置文件的结尾标识为eth0(ens33)，第二块为eth1(ens34)，以此类推
+执行 nmtui 命令来修改网卡配置时，实际上是在编辑 /etc/sysconfig/network-scripts/ifcfg-eth0 这个文件</description>
     </item>
     
     <item>
@@ -33,32 +45,6 @@ People Celebrity Describe a popular/well-known person in your country.
 You should say:
   Who this person is
  identity  有名气的 ：well-received / go down very well   personal info  born in university competition / champion / medals   physical appearance  胖 ：over-weight / big-boned 瘦 ：thin / slim 性格 ：extroverted 外向的， enthusiastic 热情的，versatile 多才多艺的，compassionate 有同情心的， benevolent 乐善好施的      What he/she has done</description>
-    </item>
-    
-    <item>
-      <title>Mathematical Modeling of assessment</title>
-      <link>https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E8%AF%84%E4%BB%B7%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Fri, 05 Aug 2022 20:07:37 +0800</pubDate>
-      
-      <guid>https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E8%AF%84%E4%BB%B7%E6%A8%A1%E5%9E%8B/</guid>
-      <description>层次分析法 - Analytic Hierarchy Process 层次分析法是将决策问题按总目标、各层子目标、评价准则直至具体的备投方案的顺序分解为不同的层次结构，然后用求解判断矩阵特征向量的办法，求得每一层次的各元素对上一层次某元素的优先权重，最后再加权和的方法递阶归并各备择方案对总目标的最终权重，此最终权重最大者即为最优方案。
-层次分析法比较适合于具有分层交错评价指标的目标系统，而且目标值又难于定量描述的决策问题
-步骤   建立层次结构模型
-  构造判断矩阵
-  由判断矩阵计算被比较元素对于该准则的相对权重，并进行一致性检验
-  计算各层元素对系统目标的合成权重，并进行排序
-  判断矩阵    Factor A B C     A 1 2 5   B 1/2 1 2   C 1/5 1/2 1        指标权重 A B C     f1       f2       f3        特点  aij 意义：与指标 j 相比 ，i 的重要程度 当 i = j 时 ，两个指标相同，因此同等重要记作 1 aij &amp;gt; 0 且满足 aij * aji = 1 (正互反矩阵)  重要性标度    标度 含义     1 同样重要性   3 稍微重要   5 明显重要   7 强烈重要   9 极端重要   2，4，6，8 上述两相邻判断的中值   倒数 A和B相比如果标度为3，则B和A相比标度为1/3    一致矩阵 一致矩阵：满足 aij * ajk = aik 的正互反矩阵为一致矩阵</description>
-    </item>
-    
-    <item>
-      <title>Mathematical Modeling of prediction</title>
-      <link>https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Fri, 05 Aug 2022 20:07:37 +0800</pubDate>
-      
-      <guid>https://thezmmm.github.io/post/%E6%95%B0%E6%A8%A1%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B/</guid>
-      <description>灰色预测  灰色预测法是一种对含有不确定因素的系统进行预测的方法 灰色预测对既含有已知信息又含有不确定信息的系统进行预测，就是对在一定范围内变化的，与时间有关的灰色过程进行预测  四种常见类型  灰色时间序列预测 即用观察到的反映预测对象特征的时间序 列来构造灰色预测模型, 预测末来某一时刻 的特征量, 或达到某一特征量的时间。 畸变预测 即通过灰色模型预测异常值出现的时刻, 预测异常值什么时候出现在特定时区内。 系统预测 通过对系统行为特征指标建立一组相互 关联的灰色预测模型, 预测系统中众多 变量间的相互协调关系的变化 拓扑预测 将原始数据做曲线, 在曲线上按定值寻 找该定值发生的所有时点, 并以该定值 为框架构成时点数列, 然后建立模型预 测该定值所发生的时点。  灰色关联度 $$ 选取参考数列\
-X_{0}=\left{X_{0}(k) \mid k=1,2, \cdots, n\right}=\left(X_{0}(1), X_{0}(2), \cdots, X_{0}(n)\right) \ 其中 k 表示时刻\ 假设有 m 个比较数列\
-\begin{array}{l} X_{i}=\left{X_{i}(k) \mid k=1,2, \cdots, n\right}=\left(X_{i}(1), X_{i}(2), \cdots, X_{i}(n)\right) \ \quad(i=1,2, \cdots, m) \end{array} \ 则称 \ \zeta_{i}(k)=\frac{\min {i} \min {k}\left|X{0}(k)-X{i}(k)\right|+\rho \max {i} \max {k}\left|X{0}(k)-X{i}(k)\right|}{\left|X_{0}(k)-X_{i}(k)\right|+\rho \max {i} \max {k}\left|X{0}(k)-X{i}(k)\right|} \quad\quad (1)\ 为比较数列 X_{i} 对参考数列 X_{0} 在 k 时刻的关联系数, 其中 \rho \in[0,+\infty) 为分辨系数。\一般来讲, 分辨系数 \rho \in[0,1] , 由 (1) 容易看出, \rho 越大，分辩率越大; \rho 越小，分辩率越小。\ 式 (1) 定义的关联系数是描述比较数列与参考数列在 某时刻关联程度的一种指标, \由于各个时刻都有一个关联系 数, 因此信息显得过于分散, 不便于比较, 为此我们给出\</description>
     </item>
     
     <item>

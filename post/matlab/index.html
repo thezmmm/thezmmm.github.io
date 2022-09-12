@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script>
+    MathJax = {
+        tex: {
+            inlineMath: [["$", "$"]],
+        },
+        displayMath: [
+            ["$$", "$$"],
+            ["\[\[", "\]\]"],
+        ],
+        svg: {
+            fontCache: "global",
+        },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+        id="MathJax-script"
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Matlab - Thezmmm</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Matlab">
 <meta itemprop="description" content="The record of Matlab&#39;s usage"><meta itemprop="datePublished" content="2022-06-01T13:01:27+08:00" />
 <meta itemprop="dateModified" content="2022-06-01T13:01:27+08:00" />
-<meta itemprop="wordCount" content="2833">
+<meta itemprop="wordCount" content="2824">
 <meta itemprop="keywords" content="data-science," /><meta property="og:title" content="Matlab" />
 <meta property="og:description" content="The record of Matlab&#39;s usage" />
 <meta property="og:type" content="article" />
@@ -30,6 +60,36 @@
 <body>
 	<div class="container wrapper">
 		<div class="header">
+	<script>
+    MathJax = {
+        tex: {
+            inlineMath: [["$", "$"]],
+        },
+        displayMath: [
+            ["$$", "$$"],
+            ["\[\[", "\]\]"],
+        ],
+        svg: {
+            fontCache: "global",
+        },
+    };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+        id="MathJax-script"
+        async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
 	
 		<div class="avatar">
 			<a href="https://thezmmm.github.io/">
@@ -1028,11 +1088,13 @@ F = [A;B]
 </span></span></code></pre></div><h2 id="differentiation-and-integration">Differentiation and integration</h2>
 <h3 id="polynomial">Polynomial</h3>
 <p>$$
-f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0},</p>
-<p>\newline
+f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0},
+$$</p>
+<p>$$
 differentiation:
-f^{\prime}(x)=a_{n} n x^{n-1}+a_{n-1}(n-1) x^{n-2}+\cdots+a_{1}</p>
-<p>\newline
+f^{\prime}(x)=a_{n} n x^{n-1}+a_{n-1}(n-1) x^{n-2}+\cdots+a_{1}
+$$</p>
+<p>$$
 integration: 
 \int f(x)=\frac{1}{n+1} a_{n} x^{n+1}+\frac{1}{n} a_{n-1} x^{n}+\cdots+a_{0} x+k
 $$</p>
@@ -1053,8 +1115,9 @@ $$</p>
 </span></span></code></pre></div><h3 id="numerical">Numerical</h3>
 <p>$$
 Differentiation:
-f^{\prime}\left(x_{0}\right)=\lim <em>{h \rightarrow 0} \frac{f\left(x</em>{0}+h\right)-f\left(x_{0}\right)}{h}
-\newline
+f^{\prime}\left(x_{0}\right)=\lim _{h \rightarrow 0} \frac{f(x0+h)-f(x0)}{h}
+$$</p>
+<p>$$
 integration:
 s=\int_{a}^{b} f(x) d(x) \approx \sum_{i=0}^{n} f\left(x_{i}\right) \int_{a}^{b} L_{i}(x) d x
 $$</p>
@@ -1092,11 +1155,12 @@ $$</p>
 <p><img src="https://tutorial.math.lamar.edu/classes/calcii/ApproximatingDefIntegrals_Files/image001.png" alt="">
 $$
 \int_{x_{0}}^{x_{3}} f(x) d x \approx h f_{0}+h f_{1}+h f_{2}=h \sum_{i=0}^{n-1} f_{i}
-\newline
-f_{0} = f\left(\frac{x_{0}+x_{1}}{2}\right)
 $$</p>
 </li>
 </ol>
+<p>$$
+f_{0} = f\left(\frac{x_{0}+x_{1}}{2}\right)
+$$</p>
 <p>Midpoint Rule Using <strong>sum()</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>h = 0.05; x = 0:h:2;
 </span></span><span style="display:flex;"><span>midpoint = (x(1:<span style="color:#00f">end</span>-1) + x(2:<span style="color:#00f">end</span>))./2;
@@ -1108,11 +1172,12 @@ $$</p>
 <p><img src="https://tutorial.math.lamar.edu/classes/calcii/ApproximatingDefIntegrals_Files/image002.png" alt="">
 $$
 \int_{x_{0}}^{x_{3}} f(x) d x \approx h \frac{f_{0}+f_{1}}{2}+h \frac{f_{1}+f_{2}}{2}+h \frac{f_{2}+f_{3}}{2}
-\newline
-f_{0}=\frac{f\left(x_{0}\right)+f\left(x_{1}\right)}{2}
 $$</p>
 </li>
 </ol>
+<p>$$
+f_{0}=\frac{f\left(x_{0}\right)+f\left(x_{1}\right)}{2}
+$$</p>
 <p>Trapezoid Rule Using <strong>trapz()</strong></p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>h = 0.05; x = 0:h:2;
 </span></span><span style="display:flex;"><span>y = f(x);
@@ -1190,8 +1255,8 @@ $$</p>
 3 x-2 y=5 \
 x+4 y=11
 \end{array}\right.
-\newline
-\newline
+$$</p>
+<p>$$
 \underbrace{\left[\begin{array}{cc}
 3 &amp; -2 \
 1 &amp; 4
@@ -1224,7 +1289,8 @@ $$</p>
 <h3 id="cramersinverse-method">Cramer&rsquo;s(Inverse) Method</h3>
 <p>$$
 A A^{-1}=A^{-1} A=I
-\newline
+$$</p>
+<p>$$
 x=A^{-1} b
 $$</p>
 <h4 id="inverse-matrix">Inverse Matrix</h4>
@@ -1245,24 +1311,15 @@ $$</p>
 \end{array}\right.
 \newline
 \newline
-\underbrace{\left[\begin{array}{cc}
-2 &amp; -12 \
-1 &amp; -5
-\end{array}\right]}<em>{A}\underbrace{\left[\begin{array}{c}
-2 \
-4
-\end{array}\right]}</em>{b}
-=\underbrace{\left[\begin{array}{c}
-x \
-y
-\end{array}\right]}_{y}
 $$</p>
 <h3 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</h3>
 <p>$$
-\boldsymbol{A} \boldsymbol{v}<em>{i}=\lambda</em>{i} \boldsymbol{v}<em>{i},\lambda</em>{i} \in \Re</p>
-<p>\newline</p>
-<p>\boldsymbol{b}=\sum \alpha_{i} \boldsymbol{v}<em>{i}, \alpha</em>{i} \in \Re
-\newline
+\boldsymbol{A} \boldsymbol{v}<em>{i}=\lambda</em>{i} \boldsymbol{v}<em>{i},\lambda</em>{i} \in \Re
+$$</p>
+<p>$$
+\boldsymbol{b}=\sum \alpha_{i} \boldsymbol{v}<em>{i}, \alpha</em>{i} \in \Re
+$$</p>
+<p>$$
 \boldsymbol{A} \boldsymbol{b}=\sum \alpha_{i} \boldsymbol{A} \boldsymbol{v}<em>{i}=\sum \alpha</em>{i} \lambda_{i} \boldsymbol{v}_{i}
 $$</p>
 <p>Using <strong>eig()</strong> to get <strong>v</strong> and <strong>λ</strong></p>
@@ -1284,8 +1341,9 @@ $$</p>
 <h3 id="variance">Variance</h3>
 <p>$$
 Variance : s=\frac{\sum\left(x_{i}-\bar{x}\right)^{2}}{n-1}
-\newline
-Standard;deviation:S=\sqrt{\frac{\sum\left(x_{i}-\bar{x}\right)^{2}}{n-1}}
+$$</p>
+<p>$$
+Standard-deviation:S=\sqrt{\frac{\sum\left(x_{i}-\bar{x}\right)^{2}}{n-1}}
 $$</p>
 <ol>
 <li>sld : Standard deviation</li>

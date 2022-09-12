@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Java on Thezmmm</title>
-    <link>https://thezmmm.github.io/tags/java/</link>
-    <description>Recent content in Java on Thezmmm</description>
+    <title>Queue on Thezmmm</title>
+    <link>https://thezmmm.github.io/tags/queue/</link>
+    <description>Recent content in Queue on Thezmmm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Thezmmm</copyright>
-    <lastBuildDate>Mon, 12 Sep 2022 10:30:53 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 10:30:53 +0800</lastBuildDate><atom:link href="https://thezmmm.github.io/tags/queue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Queue</title>
       <link>https://thezmmm.github.io/post/javaqueue/</link>
@@ -20,30 +20,6 @@ Queue queue = new LinkedList();  // add() 和 remove() 在失败时会抛出异�
 示例 Deque deque = new LinkedList();  // add() 和 remove() 在失败时会抛出异常  // 添加元素 deque.offerFirst(1); deque.offerLast(1); // 删除元素 deque.pollFirst(); deque.pollLast(); // 查看元素 deque.peekFirst(); deque.peekLast(); // 获取队列长度 deque.size() Deque的堆栈操作 Java堆栈的Stack已经过时，官方推荐使用Deque替代Stack使用
 Deque的堆栈操作方法：
  push() : 等效于addFirst() pop() : 等效于removeFirst() peek() : 等效于peekFirst()  Priority queue PriorityQueue，即优先队列。优先级队列可以保证每次取出来的元素都是队列中的最小或最大的元素（Java优先级队列默认每次取出来的为最小元素）</description>
-    </item>
-    
-    <item>
-      <title>JavaString</title>
-      <link>https://thezmmm.github.io/post/javastring/</link>
-      <pubDate>Sat, 16 Jul 2022 14:50:56 +0800</pubDate>
-      
-      <guid>https://thezmmm.github.io/post/javastring/</guid>
-      <description>查找   char charAt(int index)
-返回指定索引处的 char 值
-  boolean contains(CharSequence chars)
-判断字符串中是否包含指定的字符或字符串
-  int indexOf(int ch )
-int indexOf(int ch, int fromIndex)
-int indexOf(String str)
-int indexOf(String str, int fromIndex)
-  ch ：字符，Unicode 编码。
-  fromIndex ：开始搜索的索引位置，第一个字符是 0 ，第二个是 1 ，以此类推。
-  str ：要搜索的子字符串
-  返回指定字符在字符串中第一次出现处的索引，如果此字符串中没有这样的字符，则返回 -1
-  int lastIndexOf(int ch)
-int lastIndexOf(int ch, int fromIndex)
-int lastIndexOf(String str)
-int lastIndexOf(String str, int fromIndex)</description>
     </item>
     
   </channel>
