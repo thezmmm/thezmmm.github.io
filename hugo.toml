@@ -2,7 +2,8 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Thezmmm"
 theme = "hugo-ink"
-paginate = 5
+[pagination]
+pagerSize = "5"
 
 copyright = "© Thezmmm"
 
@@ -30,25 +31,25 @@ disqusShortname = "ink-demo"
 	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
 
 # Nav.
-# [[menu.main]]
-# name = "Home"
-# url = "/"
-# weight = 1
-#
-# [[menu.main]]
-# name = "All posts"
-# url = "/posts"
-# weight = 2
-#
-# [[menu.main]]
-# name = "About"
-# url = "/about"
-# weight = 3
-#
-# [[menu.main]]
-# name = "Tags"
-# url = "/tags"
-# weight = 4
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
 
 [[params.social]]
 name = "Github"

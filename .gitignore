@@ -1,18 +1,32 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Hugo output
+/public/
+resources/_gen/
 
-# Other files and folders
-.settings/
+# Hugo cache and temp files
+.cache/
+.hugo_build.lock
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# OS files
+.DS_Store
+Thumbs.db
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# Editor files
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+*.sublime-project
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Node / npm / package manager files (if using frontend assets)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Other temp files
+*.tmp
+*.bak
