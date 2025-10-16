@@ -1,7 +1,7 @@
 ---
 archetypedir:               "archetype"
 # hostname (and path) to the root, e.g. http://spf13.com/
-baseURL:                    "http://thezmmm.github.io/thezmmm_blog"
+baseURL:                    "https://thezmmm.github.io/"
 # include content marked as draft
 buildDrafts:                false
 # include content with publishdate in the future
