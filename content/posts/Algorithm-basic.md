@@ -3,8 +3,7 @@ title: "算法"
 description: "一些学习算法时的笔记"
 date: 2022-09-01T15:40:58+08:00
 draft: false
-type: "blog"
-tags: [Algorithm]
+tags: [algorithm]
 ---
 
 ## 排序
