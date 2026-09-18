@@ -1,11 +1,11 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "Thezmmm"
+baseURL = "https://thezmmm.github.io/"
+languageCode = "zh-cn"
+title = "马耀辉"
 theme = "hugo-ink"
 [pagination]
 pagerSize = "5"
 
-copyright = "© Thezmmm"
+copyright = "© 马耀辉"
 
 pygmentsstyle = "vs"
 pygmentscodefences = true

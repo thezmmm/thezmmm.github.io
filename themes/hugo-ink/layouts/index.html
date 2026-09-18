@@ -2,21 +2,129 @@
 <html {{- if (eq .Site.Params.mode "dark") -}}class="dark"{{ end }}>
 {{ partial "header.html" . }}
 <body>
-	<div class="container wrapper">
+	<div class="container wrapper home-page">
 		{{ partial "head.html" . }}
 
-		<div class="recent-posts section">
-			<div class="posts">
-				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
-					<div class="post">
-						{{ partial "post-preview.html" . }}
+		<main class="resume-layout">
+			<section class="hero card">
+				<div class="hero-text">
+					<p class="eyebrow">Backend Engineer · AI & Data Systems</p>
+					<h1>马耀辉</h1>
+					<p class="intro">专注后端开发与 AI 应用落地，围绕数据治理、RAG、Agent 框架以及高并发电商系统设计展开实践。</p>
+					<div class="contact-list">
+						<span>✉️ yaohui0129@gmail.com</span>
+						<span>📞 (+86) 18537941188</span>
+						<span>🐙 <a href="https://github.com/thezmmm" target="_blank" rel="noreferrer">thezmmm</a></span>
+						<span>🌐 <a href="https://thezmmm.github.io/" target="_blank" rel="noreferrer">thezmmm.github.io</a></span>
 					</div>
-				{{ end }}
-				{{ template "partials/paginator.html" . }}
-			</div>
-		</div>
+				</div>
+			</section>
+
+			<section class="info-grid">
+				<div class="card">
+					<h2>教育背景</h2>
+					<div class="timeline-item">
+						<div class="time">2025.9 — 2027.6</div>
+						<div class="content">
+							<h3>赫尔辛基大学，芬兰</h3>
+							<p>硕士研究生 | 计算机科学</p>
+							<p class="muted">GPA: 4.86 / 5.0</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="time">2021.9 — 2025.6</div>
+						<div class="content">
+							<h3>华中科技大学</h3>
+							<p>学士 | 数据科学与大数据技术</p>
+							<p class="muted">均分: 87.5 / 100</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<h2>技术栈</h2>
+					<div class="skill-groups">
+						<div>
+							<h3>语言</h3>
+							<p>Java, Python, TypeScript / JavaScript</p>
+						</div>
+						<div>
+							<h3>框架</h3>
+							<p>Spring Boot, MyBatis-Plus, Node.js / Express, React</p>
+						</div>
+						<div>
+							<h3>数据库 & 中间件</h3>
+							<p>MySQL, MongoDB, Redis, RabbitMQ, Dubbo</p>
+						</div>
+						<div>
+							<h3>AI</h3>
+							<p>OpenAI API, RAG, Agent / Multi-Agent</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="card section-block">
+				<h2>实习经历</h2>
+				<div class="experience-list">
+					<div class="experience-item">
+						<div class="experience-header">
+							<div class="company">拜耳（Bayer）</div>
+							<div class="period">2024.11 — 2025.2</div>
+						</div>
+						<div class="position">IT 实习生</div>
+						<ul>
+							<li>独立开发 Text-to-SQL 模块，面向非技术业务人员提供自然语言查询能力，覆盖约 200 张 MySQL 业务表。</li>
+							<li>基于 RAG 构建 SQL 生成链路，采用 ChromaDB 建立表结构、历史 SQL 与业务文档三路向量索引，结合相似性检索提升上下文显著性。</li>
+							<li>设计动态 Prompt 流程，按用户问题检索 Top-K 相关 Schema、历史 SQL 与业务信息，调用 OpenAI GPT-4o-mini 生成 SQL，并使用 text-embedding-3-small 做语义向量化。</li>
+							<li>引入 sqlglot 做语法校验和解析，限制执行层仅允许 SELECT 查询；配合自修复 Retry 机制提升复杂查询成功率。</li>
+							<li>使用 FastAPI 封装查询接口，并将数据库账号设置为只读权限，从权限与应用层双重降低误操作风险。</li>
+						</ul>
+					</div>
+
+					<div class="experience-item">
+						<div class="experience-header">
+							<div class="company">武汉澳科锐志信息技术有限公司</div>
+							<div class="period">2023.4 — 2024.7</div>
+						</div>
+						<div class="position">后端开发实习生</div>
+						<ul>
+							<li>负责电商平台京东开放平台接口对接，封装商品查询、质量分获取、发货模板等功能，并实现按更新时间增量同步。</li>
+							<li>基于定时任务执行商家商品全量同步，使用 Sharding-JDBC 按商家维度分库分表，支持单商家十万级商品稳定存储。</li>
+							<li>开发批量上货功能，基于 RabbitMQ 异步化处理：Producer 写入任务表并拆分消息，Consumer 调用京东开放平台 API 完成图片上传与上架。</li>
+							<li>设计最多 4 层的类目树形数据结构，后端递归组装类目与属性层级，为前端提供统一结构化接口。</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="card section-block">
+				<h2>项目经历</h2>
+				<div class="project-item">
+					<h3>Hello-Agents-Java — Java AI Agent 框架实现</h3>
+					<ul>
+						<li>设计统一 Agent 抽象与循环式执行框架，支持 Simple、ReAct、Reflection、Plan-and-Solve 四类 Agent，并引入最大执行轮数、Agent 自主终止、Tool 调用与 SSE 流式输出。</li>
+						<li>设计 Tool / ToolRegistry 抽象，统一管理工具注册、参数 Schema 与调用分发；支持主 Agent 编排多个子 Agent 并行执行，聚合输出后继续推理。</li>
+						<li>构建会话内与跨会话两级 Memory：滑动窗口与滚动摘要管理会话上下文，并结合 RAG 检索历史信息；跨会话使用 Markdown 持久化长期记忆。</li>
+						<li>构建 RAG 检索链路，集成 OpenAI Embedding 与 Apache Tika，支持 PDF、Office、HTML 等文档解析，并封装 RagToolkit 供 Agent 调用。</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="card section-block">
+				<h2>近期博客</h2>
+				<div class="mini-posts">
+					{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+					{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+					{{ range first 3 $paginator.Pages }}
+						<a class="mini-post" href="{{ .Permalink }}">
+							<span>{{ .Date.Format "2006-01-02" }}</span>
+							<strong>{{ .Title }}</strong>
+						</a>
+					{{ end }}
+				</div>
+			</section>
+		</main>
 	</div>
 	{{ partial "footer.html" . }}
 </body>
