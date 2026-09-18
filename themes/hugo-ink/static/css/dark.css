@@ -1,6 +1,6 @@
 html.dark body {
-  color: #ddd;
-  background-color: #000;
+  color: #e2e8f0;
+  background: linear-gradient(180deg, #020817 0%, #0f172a 100%);
 }
 
 html.dark ::-moz-selection {
@@ -16,11 +16,11 @@ html.dark ::selection {
 }
 
 html.dark hr {
-  border-color: #333;
+  border-color: #334155;
 }
 
 html.dark blockquote {
-  border-color: #ddd;
+  border-color: #cbd5e1;
 }
 
 html.dark h1,
@@ -28,12 +28,17 @@ html.dark h2,
 html.dark h3,
 html.dark h4,
 html.dark h5,
-html.dark h6 {
-  color: #ddd;
+html.dark h6,
+html.dark .company,
+html.dark .position,
+html.dark .content h3,
+html.dark .mini-post strong {
+  color: #f8fafc;
 }
 
-html.dark a,a:hover {
-  color: #9375fd;
+html.dark a,
+html.dark a:hover {
+  color: #a78bfa;
   text-decoration: none;
 }
 
@@ -43,7 +48,7 @@ html.dark table tbody tr:nth-of-type(even) {
 
 html.dark .site-description a,
 html.dark .site-description a:hover {
-  color: #ddd;
+  color: #e2e8f0;
   text-decoration: underline;
 }
 
@@ -52,20 +57,61 @@ html.dark a:hover {
 }
 
 html.dark .post-tags .tags a {
-  border: 1px solid #ddd;
-  color: #ddd;
+  border: 1px solid #e2e8f0;
+  color: #e2e8f0;
 }
 
 html.dark .site-title a {
-  color: #ddd;
+  color: #f8fafc;
   text-decoration: none !important;
 }
 
 html.dark .header nav,
 html.dark .footer {
-  border-color: #333;
+  border-color: #334155;
 }
 
 html.dark .highlight {
-  background-color: #333;
+  background-color: #1e293b;
+}
+
+html.dark .card {
+  background: rgba(15, 23, 42, 0.88) !important;
+  border-color: rgba(148, 163, 184, 0.25) !important;
+  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.4) !important;
+}
+
+html.dark .intro,
+html.dark .time,
+html.dark .content p,
+html.dark .skill-groups p,
+html.dark .company,
+html.dark .period,
+html.dark li,
+html.dark .muted,
+html.dark .mini-post span,
+html.dark .footer {
+  color: #cbd5e1 !important;
+}
+
+html.dark .contact-list span,
+html.dark .mini-post {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(148, 163, 184, 0.22) !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .timeline-item,
+html.dark .experience-item,
+html.dark .header nav {
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+html.dark .badge-box {
+  box-shadow: 0 18px 40px rgba(96, 165, 250, 0.18);
+}
+
+html.dark .period {
+  background: rgba(30, 41, 59, 0.9);
+  color: #cbd5e1;
 }

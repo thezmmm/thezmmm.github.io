@@ -1,45 +1,38 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
   var toggle = document.getElementById("scheme-toggle");
+  if (!toggle) return;
 
-  var scheme = "light";
-  var savedScheme = localStorage.getItem("scheme");
+  var container = document.documentElement;
+  var stored = localStorage.getItem("scheme");
+  var preferredDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var scheme = stored || (preferredDark ? "dark" : "light");
 
-  var container = document.getElementsByTagName("html")[0];
-  var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  if (prefersDark) {
-    scheme = "dark";
-  }
-
-  if(savedScheme) {
-    scheme = savedScheme;
-  }
-
-  if(scheme == "dark") {
-    darkscheme(toggle, container);
-  } else {
-    lightscheme(toggle, container);
-  }
-
-  toggle.addEventListener("click", () => {
-    if (toggle.className === "light") {
-      darkscheme(toggle, container);
-    } else if (toggle.className === "dark") {
-      lightscheme(toggle, container);
+  function applyScheme(nextScheme) {
+    if (!window.feather || !window.feather.icons) {
+      return;
     }
+
+    if (nextScheme === "dark") {
+      localStorage.setItem("scheme", "dark");
+      toggle.innerHTML = window.feather.icons.sun.toSvg();
+      toggle.classList.remove("light");
+      toggle.classList.add("dark");
+      container.classList.add("dark");
+      container.classList.remove("light");
+    } else {
+      localStorage.setItem("scheme", "light");
+      toggle.innerHTML = window.feather.icons.moon.toSvg();
+      toggle.classList.remove("dark");
+      toggle.classList.add("light");
+      container.classList.remove("dark");
+      container.classList.add("light");
+    }
+  }
+
+  applyScheme(scheme);
+
+  toggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    applyScheme(toggle.classList.contains("dark") ? "light" : "dark");
   });
 });
-
-function darkscheme(toggle, container) {
-  localStorage.setItem("scheme", "dark");
-  toggle.innerHTML = feather.icons.sun.toSvg();
-  toggle.className = "dark";
-  container.className = "dark";
-}
-
-function lightscheme(toggle, container) {
-  localStorage.setItem("scheme", "light");
-  toggle.innerHTML = feather.icons.moon.toSvg();
-  toggle.className = "light";
-  container.className = "";
-}
